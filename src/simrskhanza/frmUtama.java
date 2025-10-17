@@ -502,6 +502,7 @@ import bridging.SatuSehatMapingObatAlkes;
 import bridging.SatuSehatMapingOrganisasi;
 import bridging.SatuSehatMapingRadiologi;
 import bridging.SatuSehatMapingVaksin;
+import bridging.SatuSehatKirimAllergyIntollerance;
 import bridging.SatuSehatReferensiPasien;
 import bridging.SatuSehatReferensiPraktisi;
 import dapur.DapurSuplier;
@@ -20015,7 +20016,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         isTutup();
         DlgHome.dispose();
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-        SatuSehatMapingVaksin aplikasi=new SatuSehatMapingVaksin(this,false);
+        SatuSehatKirimAllergyIntollerance aplikasi=new SatuSehatKirimAllergyIntollerance(this,false);
         aplikasi.isCek();
         aplikasi.setSize(PanelUtama.getWidth(), PanelUtama.getHeight());
         aplikasi.setLocationRelativeTo(PanelUtama);
@@ -46776,7 +46777,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         
         btnMappingVaksinSatuSehat = new widget.ButtonBig();
         btnMappingVaksinSatuSehat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/satusehat.png")));
-        btnMappingVaksinSatuSehat.setText("Mapping Vaksin Satu Sehat");
+        btnMappingVaksinSatuSehat.setText("Kirim Alergi Satu Sehat");
         btnMappingVaksinSatuSehat.setIconTextGap(0);
         btnMappingVaksinSatuSehat.setName("btnMappingVaksinSatuSehat"); 
         btnMappingVaksinSatuSehat.setPreferredSize(new java.awt.Dimension(200, 90));

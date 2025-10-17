@@ -3,24 +3,24 @@
 <properties>
     <comment>KhanzaHMS</comment> 
     <entry key="HOST">5k7+C7EnUw9nUv2Nix+DBA==</entry>
-    <entry key="DATABASE">AZHNccBwSmSho84f+X8GyQ==</entry>
+    <entry key="DATABASE">NQWFdIVCc/TgnpLp8yIIfA==</entry>
     <entry key="PORT">nioxtijcpDaKSUiUiP5FAg==</entry>
     <entry key="USER">kMR3WfAwUK6MbhCyydxa0g==</entry>
     <entry key="PAS">l4nh5eVYrLAER/I2A4b3Tw==</entry>
-    <entry key="CARICEPAT">nonaktif</entry>
+    <entry key="CARICEPAT">aktif</entry>
     <entry key="HOSTHYBRIDWEB">5k7+C7EnUw9nUv2Nix+DBA==</entry>
     <entry key="USERHYBRIDWEB">nmXqCKzrz9i8GTZlq7JruQ==</entry>
     <entry key="PASHYBRIDWEB">AsJ/0/gCnYnD+gK4fw9uKA==</entry>
-    <entry key="HYBRIDWEB">webapps</entry>
+    <entry key="HYBRIDWEB">budiasih</entry>
     <entry key="PORTWEB">80</entry>
-    <entry key="AKTIFKANWARNARALAN">no</entry>
+    <entry key="AKTIFKANWARNARALAN">yes</entry>
     <entry key="ANTRIAN">player</entry>
     <entry key="LOKETANTRIAN">1</entry>
     <entry key="ALARMAPOTEK">yes</entry>
     <entry key="RESEPRAJALKEPLAN">yes</entry>
     <entry key="FORMALARMAPOTEK">ralan + ranap</entry>
     <entry key="STOKKOSONGRESEP">no</entry>
-    <entry key="TAMPILKANCOPYRESEPDOKTERLAIN">no</entry>
+    <entry key="TAMPILKANCOPYRESEPDOKTERLAIN">yes</entry>
     <entry key="HPPFARMASI">dasar</entry>
     <entry key="HPPTOKO">dasar</entry>
     <entry key="ALARMLAB">yes</entry>
@@ -116,7 +116,7 @@
     <entry key="CETAKRINCIANOBAT">no</entry>
     <entry key="DEPOAKTIFOBAT"></entry>
     <entry key="VALIDASIULANGBERIOBAT">no</entry>
-    <entry key="AKTIFKANBILLINGPARSIAL">yes</entry>
+    <entry key="AKTIFKANBILLINGPARSIAL">no</entry>
     <entry key="URLDUKCAPILJAKARTA">http://kependudukan.jakarta.go.id/wsrs/xml.jsp</entry>
     <entry key="USERDUKCAPILJAKARTA">eYTbZ3SMrmsvkl4t8u0zrA==</entry>
     <entry key="PASSDUKCAPILJAKARTA">iDrX7PhhkIwMup7YcS2RFg==</entry>
@@ -126,7 +126,7 @@
     <entry key="USERDUKCAPIL">l4nh5eVYrLAER/I2A4b3Tw==</entry>
     <entry key="PASSDUKCAPIL">l4nh5eVYrLAER/I2A4b3Tw==</entry>
     <entry key="IPUSERDUKCAPIL">10.160.57.2</entry>
-    <entry key="AKTIFKANTRACKSQL">cj8o6eBdSn+TiUrBgGoElQ==</entry>
+    <entry key="AKTIFKANTRACKSQL">88tE0ZUstuza/UrtfBYkFA==</entry>
     <entry key="HOSTWSLICA">http://localhost/bridging-lica/public</entry>
     <entry key="KEYWSLICA">yLT3/8b0KAb5QK1ueFkW7g==</entry>
     <entry key="HOSTFUJI">5k7+C7EnUw9nUv2Nix+DBA==</entry>

@@ -62,8 +62,8 @@ public final class DlgCariObat extends javax.swing.JDialog {
     private sekuel Sequel=new sekuel();
     private validasi Valid=new validasi();
     private Connection koneksi=koneksiDB.condb();
-    private PreparedStatement psobat,pscarikapasitas,psstok,ps2,psbatch,psrekening;
-    private ResultSet rsobat,carikapasitas,rsstok,rs2,rsbatch,rsrekening;
+    private PreparedStatement psobat,pscarikapasitas,psstok,ps2,psbatch,psrekening,psalergi;
+    private ResultSet rsobat,carikapasitas,rsstok,rs2,rsbatch,rsrekening,rsalergi;
     private double h_belicari=0, hargacari=0, sisacari=0,y=0,embalase=Sequel.cariIsiAngka("select set_embalase.embalase_per_obat from set_embalase"),
                    tuslah=Sequel.cariIsiAngka("select set_embalase.tuslah_per_obat from set_embalase"),kenaikan=0,stokbarang=0,ttl=0,ppnobat=0,ttlhpp,ttljual;
     private int i=0,z=0,row=0,row2,r;
@@ -468,6 +468,9 @@ public final class DlgCariObat extends javax.swing.JDialog {
         TPasien = new widget.TextBox();
         TNoRM = new widget.TextBox();
         LblNoRawat = new widget.TextBox();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TAlergi = new javax.swing.JTextArea();
         TabRawat = new javax.swing.JTabbedPane();
         Scroll = new widget.ScrollPane();
         tbObat = new widget.Table();
@@ -785,7 +788,7 @@ public final class DlgCariObat extends javax.swing.JDialog {
         jLabel8.setBounds(4, 40, 65, 23);
 
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-04-2023" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-09-2025" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
@@ -918,12 +921,32 @@ public final class DlgCariObat extends javax.swing.JDialog {
         FormInput.add(LblNoRawat);
         LblNoRawat.setBounds(72, 10, 123, 23);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel1.setText("Alergi");
+        jLabel1.setName("jLabel1"); // NOI18N
+        FormInput.add(jLabel1);
+        jLabel1.setBounds(810, 0, 40, 15);
+
+        jScrollPane1.setName("jScrollPane1"); // NOI18N
+
+        TAlergi.setColumns(20);
+        TAlergi.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        TAlergi.setRows(5);
+        TAlergi.setDisabledTextColor(new java.awt.Color(153, 0, 0));
+        TAlergi.setDoubleBuffered(true);
+        TAlergi.setEnabled(false);
+        TAlergi.setName("TAlergi"); // NOI18N
+        jScrollPane1.setViewportView(TAlergi);
+
+        FormInput.add(jScrollPane1);
+        jScrollPane1.setBounds(700, 20, 260, 80);
+
         internalFrame1.add(FormInput, java.awt.BorderLayout.PAGE_START);
 
         TabRawat.setBackground(new java.awt.Color(255, 255, 253));
         TabRawat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(241, 246, 236)));
         TabRawat.setForeground(new java.awt.Color(50, 50, 50));
-        TabRawat.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         TabRawat.setName("TabRawat"); // NOI18N
         TabRawat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2078,6 +2101,7 @@ private void JeniskelasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:even
     private widget.ScrollPane Scroll;
     private widget.ScrollPane Scroll1;
     private widget.ScrollPane Scroll2;
+    private javax.swing.JTextArea TAlergi;
     private widget.TextBox TCari;
     private widget.TextBox TNoRM;
     private widget.TextBox TNoRw;
@@ -2088,6 +2112,7 @@ private void JeniskelasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:even
     private widget.ComboBox cmbJam;
     private widget.ComboBox cmbMnt;
     private widget.InternalFrame internalFrame1;
+    private javax.swing.JLabel jLabel1;
     private widget.Label jLabel10;
     private widget.Label jLabel11;
     private widget.Label jLabel12;
@@ -2096,6 +2121,7 @@ private void JeniskelasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:even
     private widget.Label jLabel7;
     private widget.Label jLabel8;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private widget.TextBox kdgudang;
     private widget.Label label12;
     private widget.Label label13;
@@ -3455,7 +3481,9 @@ private void JeniskelasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:even
         BtnGudang.setEnabled(akses.getakses_depo_obat());
     }
     
-    public void setNoRm(String norwt,String norm,String nama,String tanggal, String jam) {        
+    public void setNoRm(String norwt,String norm,String nama,String tanggal, String jam) { 
+        String alergi = Sequel.alergi(norm, "true");
+        TAlergi.setText(alergi);
         aktifpcare="no";
         TNoRw.setText(norwt);
         LblNoRawat.setText(norwt);
@@ -3471,6 +3499,8 @@ private void JeniskelasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:even
     
     public void setNoRm2(String norwt,String norm,String nama,Date tanggal, String jam,String menit,String detik,boolean cekbox) {        
         aktifpcare="no";
+        String alergi = Sequel.alergi(norm, "true");
+        TAlergi.setText(alergi);
         TNoRw.setText(norwt);
         LblNoRawat.setText(norwt);
         TNoRM.setText(norm);

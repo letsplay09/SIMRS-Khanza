@@ -194,6 +194,7 @@ import surat.SuratPersetujuanUmum;
 import surat.SuratPulangAtasPermintaanSendiri;
 import surat.SuratSakit;
 import surat.SuratSakitPihak2;
+import rekammedis.DlgDataAlergiPasien;
 
 /**
  *
@@ -212,8 +213,8 @@ public class DlgKamarInap extends javax.swing.JDialog {
     private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private Date date = new Date();
     private String now=dateFormat.format(date),kmr="",key="",tglmasuk,jammasuk,kd_pj,KUNCIDOKTERRANAP="",
-            hariawal="",aktifkan_hapus_data_salah="",terbitsep="",namadokter="";
-    private PreparedStatement ps,pssetjam,pscaripiutang,psdiagnosa,psibu,psanak,pstarif,psdpjp,pscariumur;
+            hariawal="",aktifkan_hapus_data_salah="",terbitsep="",namadokter="",alergi="";
+    private PreparedStatement ps,pssetjam,pscaripiutang,psdiagnosa,psibu,psanak,pstarif,psdpjp,pscariumur,psalergi;
     private ResultSet rs,rs2,rssetjam;
     private int i,row=0;
     private boolean ceksukses=false;
@@ -823,6 +824,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         MnPerencanaanPemulangan = new javax.swing.JMenuItem();
         ppResume = new javax.swing.JMenuItem();
         ppRiwayat = new javax.swing.JMenuItem();
+        ppAlergi = new javax.swing.JMenuItem();
         MnPermintaan = new javax.swing.JMenu();
         MnJadwalOperasi = new javax.swing.JMenuItem();
         MnPermintaanLab = new javax.swing.JMenuItem();
@@ -1072,6 +1074,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         TNoRMCari = new widget.TextBox();
         TPasienCari = new widget.TextBox();
         jLabel37 = new widget.Label();
+        jAlergi = new widget.Label();
         cmbStatusBayar = new widget.ComboBox();
 
         WindowInputKamar.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -2636,6 +2639,21 @@ public class DlgKamarInap extends javax.swing.JDialog {
         ppRiwayat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ppRiwayatBtnPrintActionPerformed(evt);
+            }
+        });
+        
+        ppAlergi.setBackground(new java.awt.Color(255, 255, 254));
+        ppAlergi.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        ppAlergi.setForeground(new java.awt.Color(50, 50, 50));
+        ppAlergi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        ppAlergi.setText("Alergi");
+        ppAlergi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ppAlergi.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        ppAlergi.setName("[170,26]"); // NOI18N
+        ppAlergi.setPreferredSize(new java.awt.Dimension(200, 26));
+        ppAlergi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ppAlergiBtnPrintActionPerformed(evt);
             }
         });
 
@@ -5662,11 +5680,19 @@ public class DlgKamarInap extends javax.swing.JDialog {
         jLabel37.setName("jLabel37"); // NOI18N
         jLabel37.setPreferredSize(new java.awt.Dimension(90, 23));
         panelGlass9.add(jLabel37);
-
+      
         cmbStatusBayar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Semua", "Sudah Bayar", "Belum Bayar" }));
         cmbStatusBayar.setName("cmbStatusBayar"); // NOI18N
         cmbStatusBayar.setPreferredSize(new java.awt.Dimension(120, 23));
         panelGlass9.add(cmbStatusBayar);
+        
+        jAlergi.setText(" ");
+        jAlergi.setFont(new java.awt.Font("Tahoma", 1, 13));
+        jAlergi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jAlergi.setForeground(new java.awt.Color(255, 0, 0));
+        jAlergi.setName("jAlergi"); // NOI18N
+        jAlergi.setPreferredSize(new java.awt.Dimension(450, 23));
+        panelGlass9.add(jAlergi);
 
         internalFrame1.add(panelGlass9, java.awt.BorderLayout.PAGE_START);
 
@@ -8898,6 +8924,27 @@ public class DlgKamarInap extends javax.swing.JDialog {
             this.setCursor(Cursor.getDefaultCursor());
         }
     }//GEN-LAST:event_ppRiwayatBtnPrintActionPerformed
+    
+    private void ppAlergiBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppAlergiBtnPrintActionPerformed
+        if(tabMode.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, data pasien sudah habis...!!!!");
+            TCari.requestFocus();
+        }else if(tbKamIn.getSelectedRow()== -1){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu data kamar inap pada table...!!!");
+            TCari.requestFocus();
+        }else{
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            DlgDataAlergiPasien form=new DlgDataAlergiPasien(null,false);
+            form.isCek();
+            form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            form.setLocationRelativeTo(internalFrame1);
+            form.emptTeks();
+            form.setNoRm(TNoRwCari.getText(),TNoRMCari.getText(),TPasienCari.getText());
+            form.tampil();
+            form.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }
+    }//GEN-LAST:event_ppAlergiBtnPrintActionPerformed
 
     private void ppCatatanPasienBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppCatatanPasienBtnPrintActionPerformed
         if(tabMode.getRowCount()==0){
@@ -18753,6 +18800,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
     private widget.Label jLabel5;
     private widget.Label jLabel6;
     private widget.Label jLabel7;
+    private widget.Label jAlergi;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu.Separator jSeparator12;
     private javax.swing.JPopupMenu.Separator jSeparator13;
@@ -18781,6 +18829,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
     private javax.swing.JMenuItem ppPerawatanCorona;
     private javax.swing.JMenuItem ppResume;
     private javax.swing.JMenuItem ppRiwayat;
+    private javax.swing.JMenuItem ppAlergi;
     private javax.swing.JMenuItem ppSkriningGizi;
     private javax.swing.JMenuItem ppSkriningManagerPelayananPasien;
     private javax.swing.JMenuItem ppSkriningNutrisiAnak;
@@ -18964,6 +19013,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
             TOut.setText(tbKamIn.getValueAt(tbKamIn.getSelectedRow(),13).toString());
             ttlbiaya.setText(tbKamIn.getValueAt(tbKamIn.getSelectedRow(),15).toString());
             cmbStatus.setSelectedItem(tbKamIn.getValueAt(tbKamIn.getSelectedRow(),16).toString());
+            jAlergi.setText(Sequel.alergi(tbKamIn.getValueAt(tbKamIn.getSelectedRow(),1).toString(), "false"));
         }
     }
 
@@ -19232,6 +19282,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         MnDiagnosa.setEnabled(akses.getdiagnosa_pasien());
         MnDPJP.setEnabled(akses.getdpjp_ranap()); 
         ppRiwayat.setEnabled(akses.getresume_pasien()); 
+        ppAlergi.setEnabled(akses.getresume_pasien()); 
         ppCatatanPasien.setEnabled(akses.getcatatan_pasien()); 
         ppDataHAIs.setEnabled(akses.getdata_HAIs()); 
         MnSEP.setEnabled(akses.getbpjs_sep());
@@ -20144,6 +20195,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         MnDataRM.add(MnEdukasi);
         MnDataRM.add(ppResume);
         MnDataRM.add(ppRiwayat);
+        MnDataRM.add(ppAlergi);
         MnRMHCU.add(MnCheckListKriteriaMasukNICU);
         MnRMHCU.add(MnCheckListKriteriaKeluarNICU);
         MnRMHCU.add(MnCheckListKriteriaMasukPICU);

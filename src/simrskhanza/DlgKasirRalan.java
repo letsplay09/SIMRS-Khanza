@@ -111,6 +111,7 @@ import rekammedis.RMDataMonitoringReaksiTranfusi;
 import rekammedis.RMDataSkriningGiziLanjut;
 import rekammedis.RMHemodialisa;
 import rekammedis.RMDeteksiDiniCorona;
+import rekammedis.DlgDataAlergiPasien;
 import rekammedis.RMEdukasiPasienKeluargaRawatJalan;
 import rekammedis.RMHasilEndoskopiFaringLaring;
 import rekammedis.RMHasilEndoskopiHidung;
@@ -256,15 +257,15 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
     private sekuel Sequel=new sekuel();
     private validasi Valid=new validasi();
     private Connection koneksi=koneksiDB.condb();
-    private PreparedStatement psotomatis,psotomatis2,pskasir,pscaripiutang,psrekening;
-    private ResultSet rskasir,rsrekening;
+    private PreparedStatement psotomatis,psotomatis2,pskasir,pscaripiutang,psrekening,psalergi;
+    private ResultSet rskasir,rsrekening,rsalergi;
     private String aktifkanparsial="no",kamar_inap_kasir_ralan=Sequel.cariIsi("select set_jam_minimal.kamar_inap_kasir_ralan from set_jam_minimal"),caripenjab="",filter="no",
             namadokter="",namapoli="",order="reg_periksa.no_rawat desc",validasicatatan="No",
             Suspen_Piutang_Tindakan_Ralan="",Tindakan_Ralan="",Beban_Jasa_Medik_Dokter_Tindakan_Ralan="",Utang_Jasa_Medik_Dokter_Tindakan_Ralan="",
             Beban_Jasa_Medik_Paramedis_Tindakan_Ralan="",Utang_Jasa_Medik_Paramedis_Tindakan_Ralan="",Beban_KSO_Tindakan_Ralan="",Utang_KSO_Tindakan_Ralan="",
             Beban_Jasa_Sarana_Tindakan_Ralan="",Utang_Jasa_Sarana_Tindakan_Ralan="",HPP_BHP_Tindakan_Ralan="",Persediaan_BHP_Tindakan_Ralan="",terbitsep="",
             Beban_Jasa_Menejemen_Tindakan_Ralan="",Utang_Jasa_Menejemen_Tindakan_Ralan="",tampildiagnosa="",finger="",norawatdipilih="",normdipilih="",
-            variabel="";
+            variabel="",alergi="";
     public DlgBilingRalan billing=new DlgBilingRalan(null,false);
     private int i=0,pilihan=0,sudah=0,jmlparsial=0;
     public DlgKamarInap kamarinap=new DlgKamarInap(null,false);
@@ -1085,6 +1086,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         TNoRMCari = new widget.TextBox();
         jLabel8 = new widget.Label();
         TPasienCari = new widget.TextBox();
+        jAlergi = new widget.Label();
 
         jPopupMenu1.setForeground(new java.awt.Color(50, 50, 50));
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -2501,7 +2503,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         ppDeteksiDIniCorona.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         ppDeteksiDIniCorona.setForeground(new java.awt.Color(50, 50, 50));
         ppDeteksiDIniCorona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        ppDeteksiDIniCorona.setText("Deteksi Dini Corona");
+        ppDeteksiDIniCorona.setText("Alergi");
         ppDeteksiDIniCorona.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ppDeteksiDIniCorona.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         ppDeteksiDIniCorona.setName("ppDeteksiDIniCorona"); // NOI18N
@@ -3899,7 +3901,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         ppPerawatanCorona.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         ppPerawatanCorona.setForeground(new java.awt.Color(50, 50, 50));
         ppPerawatanCorona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        ppPerawatanCorona.setText("Perawatan Pasien Corona INACBG");
+        ppPerawatanCorona.setText("IDRG LIst Klaim");
         ppPerawatanCorona.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ppPerawatanCorona.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         ppPerawatanCorona.setName("ppPerawatanCorona"); // NOI18N
@@ -6715,6 +6717,14 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         TPasienCari.setName("TPasienCari"); // NOI18N
         TPasienCari.setPreferredSize(new java.awt.Dimension(250, 23));
         panelGlass9.add(TPasienCari);
+        
+        jAlergi.setText(" ");
+        jAlergi.setFont(new java.awt.Font("Tahoma", 1, 13));
+        jAlergi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jAlergi.setForeground(new java.awt.Color(255, 0, 0));
+        jAlergi.setName("jAlergi"); // NOI18N
+        jAlergi.setPreferredSize(new java.awt.Dimension(450, 23));
+        panelGlass9.add(jAlergi);
 
         internalFrame1.add(panelGlass9, java.awt.BorderLayout.PAGE_START);
 
@@ -6807,8 +6817,8 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
                     i=tbKasirRalan.getSelectedColumn();
                     if(i==3){
                         if(validasicatatan.equals("Yes")){
-                            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                            LabelCatatan.setText(Sequel.cariIsi("select catatan_pasien.catatan from catatan_pasien where catatan_pasien.no_rkm_medis=?",TNoRMCari.getText()));
+                            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));   
+                                LabelCatatan.setText(Sequel.cariIsi("select catatan_pasien.catatan from catatan_pasien where catatan_pasien.no_rkm_medis=?",TNoRMCari.getText()));
                             if(!LabelCatatan.getText().equals("")){
                                 DlgCatatan.setLocationRelativeTo(TabRawat);
                                 DlgCatatan.setVisible(true);
@@ -10989,19 +10999,19 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
         }else{
             if(tbKasirRalan.getSelectedRow()!= -1){
                 this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                RMDeteksiDiniCorona form=new RMDeteksiDiniCorona(null,false);
+                DlgDataAlergiPasien form=new DlgDataAlergiPasien(null,false);
                 form.isCek();
                 form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
                 form.setLocationRelativeTo(internalFrame1);
                 form.emptTeks();
-                form.setNoRm(TNoRw.getText(),DTPCari2.getDate());
+                form.setNoRm(TNoRw.getText(),TNoRMCari.getText(),TPasienCari.getText());
                 form.tampil();
                 form.setVisible(true);
                 this.setCursor(Cursor.getDefaultCursor());
             }
         }
     }//GEN-LAST:event_ppDeteksiDIniCoronaBtnPrintActionPerformed
-
+   
     private void MnCetakSuratHamilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnCetakSuratHamilActionPerformed
         if(tabModekasir.getRowCount()==0){
             JOptionPane.showMessageDialog(null,"Maaf, data pasien sudah habis...!!!!");
@@ -15704,6 +15714,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
     private widget.Label jLabel6;
     private widget.Label jLabel7;
     private widget.Label jLabel8;
+    private widget.Label jAlergi;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JPanel jPanel2;
@@ -15938,6 +15949,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
             TNoReg.setText(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),14).toString());
             TNoRMCari.setText(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),2).toString());
             TPasienCari.setText(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),3).toString());
+            jAlergi.setText(Sequel.alergi(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),2).toString(), "false"));
         }
     }
 
@@ -16784,6 +16796,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
             TNoReg.setText("-");
             TNoRMCari.setText(tbKasirRalan2.getValueAt(tbKasirRalan2.getSelectedRow(),2).toString());
             TPasienCari.setText(tbKasirRalan2.getValueAt(tbKasirRalan2.getSelectedRow(),3).toString());
+            jAlergi.setText(Sequel.alergi(tbKasirRalan.getValueAt(tbKasirRalan2.getSelectedRow(),2).toString(), "false"));
         }
     }
     

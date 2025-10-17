@@ -1396,8 +1396,9 @@ public final class sekuel {
             kegiatan = formattanggal.parse(tanggalinputdata);
             bedawaktu = (kegiatan.getTime()-waktumulai.getTime())/1000;
             if(bedawaktu<0){
-                bool=false;
-                JOptionPane.showMessageDialog(null,"Maaf, jam input data / perubahan data minimal di jam "+tanggalregistrasi+" !");
+//                bool=false;
+//                JOptionPane.showMessageDialog(null,"Maaf, jam input data / perubahan data minimal di jam "+tanggalregistrasi+" !");
+                bool=true;
             }else{
                 bool=true;
             }
@@ -1415,8 +1416,9 @@ public final class sekuel {
             kegiatan = formattanggal.parse(tanggalinputdata);
             bedawaktu = (kegiatan.getTime()-waktumulai.getTime())/1000;
             if(bedawaktu>172800){
-                bool=false;
-                JOptionPane.showMessageDialog(null,"Maaf, perubahan data / penghapusan data tidak boleh lebih dari 2 x 24 jam !");
+//                bool=false;
+//                JOptionPane.showMessageDialog(null,"Maaf, perubahan data / penghapusan data tidak boleh lebih dari 2 x 24 jam !");
+                bool=true;
             }else{
                 bool=true;
             }
@@ -2103,6 +2105,43 @@ public final class sekuel {
 
     private void cetak(String str) {
         System.out.println(str);
+    }
+    
+    public String alergi(String norm, String nextline){
+        String alergi = "";
+        try {
+            if(!norm.equals("")){
+                ps = connect.prepareStatement(
+                    "select reg_periksa.no_rkm_medis, alergi_pasien.*, satu_sehat_ref_allergy.display from alergi_pasien "+
+                    "inner join reg_periksa on alergi_pasien.no_rawat=reg_periksa.no_rawat " +
+                    "inner join satu_sehat_ref_allergy on alergi_pasien.allergy_code=satu_sehat_ref_allergy.kode "+
+                    "where reg_periksa.no_rkm_medis =? order by alergi_pasien.no_rawat desc ");
+                try {
+                    ps.setString(1,norm);
+                    rs=ps.executeQuery();
+                    while(rs.next()){
+                        alergi += rs.getString("note");
+                        if(nextline.equals("true")){
+                            alergi += " \n";
+                        }else{
+                            alergi += ", ";
+                        }
+                    }
+                } catch (Exception e) {
+                    System.out.println("Notifikasi : "+e);
+                }finally{
+                    if(rs != null){
+                        rs.close();
+                    }
+                    if(ps != null){
+                        ps.close();
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notif : "+e);
+        }
+        return alergi;
     }
 
     public class Painter extends Canvas {
