@@ -188,10 +188,10 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         tbMasalahDetailMasalah.setDefaultRenderer(Object.class, new WarnaTable());
 
         TNoRw.setDocument(new batasInput((byte)17).getKata(TNoRw));
-        TDiagnosis.setDocument(new batasInput((int)150).getKata(TDiagnosis));
-        TKelompok.setDocument(new batasInput((int)150).getKata(TKelompok));
-        Assemen.setDocument(new batasInput((int)250).getKata(Assemen));
-        Identifikasi.setDocument(new batasInput((int)250).getKata(Identifikasi));
+        TDiagnosis.setDocument(new batasInput((int)2000).getKata(TDiagnosis));
+        TKelompok.setDocument(new batasInput((int)2000).getKata(TKelompok));
+        Assemen.setDocument(new batasInput((int)2000).getKata(Assemen));
+        Identifikasi.setDocument(new batasInput((int)2000).getKata(Identifikasi));
         Perencanaan.setDocument(new batasInput((int)2000).getKata(Perencanaan));
         TCari.setDocument(new batasInput((int)100).getKata(TCari));
         
@@ -352,7 +352,6 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         TDokter2 = new widget.TextBox();
         KdDok2 = new widget.TextBox();
         btnDokter2 = new widget.Button();
-        jLabel40 = new widget.Label();
         jLabel22 = new widget.Label();
         scrollPane5 = new widget.ScrollPane();
         TDiagnosis = new widget.TextArea();
@@ -537,7 +536,6 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
 
         TabRawat.setBackground(new java.awt.Color(254, 255, 254));
         TabRawat.setForeground(new java.awt.Color(50, 50, 50));
-        TabRawat.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         TabRawat.setName("TabRawat"); // NOI18N
         TabRawat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -549,13 +547,15 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         internalFrame2.setName("internalFrame2"); // NOI18N
         internalFrame2.setLayout(new java.awt.BorderLayout(1, 1));
 
+        scrollInput.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         scrollInput.setName("scrollInput"); // NOI18N
         scrollInput.setPreferredSize(new java.awt.Dimension(102, 557));
 
         FormInput.setBackground(new java.awt.Color(255, 255, 255));
         FormInput.setBorder(null);
+        FormInput.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         FormInput.setName("FormInput"); // NOI18N
-        FormInput.setPreferredSize(new java.awt.Dimension(870, 573));
+        FormInput.setPreferredSize(new java.awt.Dimension(870, 1500));
         FormInput.setLayout(null);
 
         TNoRw.setHighlighter(null);
@@ -633,10 +633,10 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         TglLahir.setBounds(644, 10, 80, 23);
 
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel9.setText("Identifikasi Masalah :");
+        jLabel9.setText("Identifikasi Masalah - risiko :");
         jLabel9.setName("jLabel9"); // NOI18N
         FormInput.add(jLabel9);
-        jLabel9.setBounds(444, 330, 120, 23);
+        jLabel9.setBounds(450, 480, 190, 23);
 
         Jk.setEditable(false);
         Jk.setHighlighter(null);
@@ -667,6 +667,7 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         Perencanaan.setColumns(20);
         Perencanaan.setRows(10);
         Perencanaan.setTabSize(14);
+        Perencanaan.setText("[  ] Identifikasi diagnosa, prognitis, kebutuhan dan saran hasil asuhan pasien\n[  ] Validasi rencana asuhan pelayanan\n[  ] Fasilitas untuk mengatasi masalah dan konflik\n[  ] Rencanakan pemberian informasi ke pasien / keluarga pengambil keputusan\n[  ] Rencanakan keterlibatan pasien / keluarga dalam asuhan pelayanan\n[  ] Monitor pembiayaan dan penjamin pasien\n[  ] Lain - lain");
         Perencanaan.setName("Perencanaan"); // NOI18N
         Perencanaan.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -676,13 +677,13 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         scrollPane2.setViewportView(Perencanaan);
 
         FormInput.add(scrollPane2);
-        scrollPane2.setBounds(444, 470, 410, 93);
+        scrollPane2.setBounds(20, 550, 410, 110);
 
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel31.setText("Perencanaan :");
+        jLabel31.setText("Perencanaan manajemen pelayanan pasien :");
         jLabel31.setName("jLabel31"); // NOI18N
         FormInput.add(jLabel31);
-        jLabel31.setBounds(444, 450, 120, 23);
+        jLabel31.setBounds(20, 530, 240, 23);
 
         scrollPane3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         scrollPane3.setName("scrollPane3"); // NOI18N
@@ -700,13 +701,13 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         scrollPane3.setViewportView(Assemen);
 
         FormInput.add(scrollPane3);
-        scrollPane3.setBounds(444, 230, 410, 93);
+        scrollPane3.setBounds(270, 670, 160, 10);
 
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel32.setText("Assesmen :");
         jLabel32.setName("jLabel32"); // NOI18N
         FormInput.add(jLabel32);
-        jLabel32.setBounds(444, 210, 120, 23);
+        jLabel32.setBounds(450, 130, 120, 23);
 
         scrollPane4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         scrollPane4.setName("scrollPane4"); // NOI18N
@@ -715,6 +716,7 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         Identifikasi.setColumns(20);
         Identifikasi.setRows(10);
         Identifikasi.setTabSize(14);
+        Identifikasi.setText("[  ] Asuhan pelayanan yang tidak sesuai kebutuhan\n[  ] Over / Under utilisasi pelayanan sesuai standar yang digunakan\n[  ] Ketidakpatuhan pasien\n[  ] Edukasi / pemahaman kurang memadai terkait proses penyakit, kondisi penyakit dan rencana pengobatan\n[  ] Kurang dukungan keluarga\n[  ] Penurunan determinasi pasien (tingkat keparahan / komplikasi\n[  ] Kendala keuangan ketika komplikasi meningkat\n[  ] Pemulangan atau rujukan yang belum memenuhi kriteria atau ditunda\n[  ] Lain - lain ");
         Identifikasi.setName("Identifikasi"); // NOI18N
         Identifikasi.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -724,10 +726,10 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         scrollPane4.setViewportView(Identifikasi);
 
         FormInput.add(scrollPane4);
-        scrollPane4.setBounds(444, 350, 410, 93);
+        scrollPane4.setBounds(450, 500, 540, 160);
 
         TglEvaluasi.setForeground(new java.awt.Color(50, 70, 50));
-        TglEvaluasi.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-03-2023 07:08:09" }));
+        TglEvaluasi.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-12-2025 10:28:24" }));
         TglEvaluasi.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TglEvaluasi.setName("TglEvaluasi"); // NOI18N
         TglEvaluasi.setOpaque(false);
@@ -743,7 +745,7 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         jLabel94.setText("Catatan :");
         jLabel94.setName("jLabel94"); // NOI18N
         FormInput.add(jLabel94);
-        jLabel94.setBounds(10, 210, 180, 23);
+        jLabel94.setBounds(10, 130, 180, 23);
 
         jSeparator3.setBackground(new java.awt.Color(239, 244, 234));
         jSeparator3.setForeground(new java.awt.Color(239, 244, 234));
@@ -760,13 +762,13 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         Scroll6.setViewportView(tbIdentifikasiMPP);
 
         FormInput.add(Scroll6);
-        Scroll6.setBounds(10, 230, 410, 303);
+        Scroll6.setBounds(10, 150, 420, 250);
 
         label12.setText("Key Word :");
         label12.setName("label12"); // NOI18N
         label12.setPreferredSize(new java.awt.Dimension(60, 23));
         FormInput.add(label12);
-        label12.setBounds(0, 540, 70, 23);
+        label12.setBounds(20, 410, 70, 23);
 
         TCariMasalah.setToolTipText("Alt+C");
         TCariMasalah.setName("TCariMasalah"); // NOI18N
@@ -777,7 +779,7 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
             }
         });
         FormInput.add(TCariMasalah);
-        TCariMasalah.setBounds(74, 540, 241, 23);
+        TCariMasalah.setBounds(90, 410, 241, 23);
 
         BtnCariMasalah.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/accept.png"))); // NOI18N
         BtnCariMasalah.setMnemonic('1');
@@ -795,7 +797,7 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
             }
         });
         FormInput.add(BtnCariMasalah);
-        BtnCariMasalah.setBounds(319, 540, 28, 23);
+        BtnCariMasalah.setBounds(340, 410, 28, 23);
 
         BtnTambahMasalah.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/plus_16.png"))); // NOI18N
         BtnTambahMasalah.setMnemonic('3');
@@ -808,7 +810,7 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
             }
         });
         FormInput.add(BtnTambahMasalah);
-        BtnTambahMasalah.setBounds(383, 540, 28, 23);
+        BtnTambahMasalah.setBounds(400, 410, 28, 23);
 
         Alamat.setEditable(false);
         Alamat.setHighlighter(null);
@@ -919,15 +921,10 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         FormInput.add(btnDokter2);
         btnDokter2.setBounds(826, 100, 28, 23);
 
-        jLabel40.setText("Diagnosis :");
-        jLabel40.setName("jLabel40"); // NOI18N
-        FormInput.add(jLabel40);
-        jLabel40.setBounds(0, 130, 70, 23);
-
-        jLabel22.setText("Kelompok Resiko :");
+        jLabel22.setText("Identifikasi Harapan / Sasaran Pasien : ");
         jLabel22.setName("jLabel22"); // NOI18N
         FormInput.add(jLabel22);
-        jLabel22.setBounds(401, 130, 103, 23);
+        jLabel22.setBounds(20, 440, 190, 23);
 
         scrollPane5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         scrollPane5.setName("scrollPane5"); // NOI18N
@@ -935,6 +932,8 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         TDiagnosis.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         TDiagnosis.setColumns(20);
         TDiagnosis.setRows(5);
+        TDiagnosis.setText("1. Fisik, fungsional, kognitif, kemandirian\n    [  ] Sadar\t\t[  ] Fisik Normal\t[  ] Ada gangguan fisik\t[  ] Dibantu Petugas\n    [  ] Tidak sadar\t[  ] Mandiri\t[  ] Dibantu Penuh\n2. Riwayat Kesehatan : [  ] Tidak Pernah Dirawat\t[  ] Pernah Dirawat\n3. Perilaku Psikososiokultural\n    [  ] Tenang\t[  ] Depresi\t[  ] Marah\t[  ] Cemas\t[  ] Lain - Lain \n4. Kesehatan Mental\n    [  ] Ada riwayat gangguan jiwa\t[  ] Tidak ada gangguan\t[  ] Gagal Pengobatan\n    [  ] Terjadinya gangguan serius \t[  ] Dalam Pengobatan\n5. Tersedianya dukungan keluarga, kemampuan merawat dari pemberi asuhan\n    [  ] Handal\t[  ] Krisis\t[  ] Dipertanyakan\t[  ] Tidak ada\n6. Finansial / sumber keuangan\n    [  ] Pegawai negeri [  ] Wiraswasta [  ] Pensiunan\n    [  ] BUruh / pekerja tidak tetap    [  ] Karyawan swasta\n7. Asuransi / Peminjaman:   [  ] Ada, aktif [  ] Ada, tidak aktif   [  ] Tidak ada\n8. Riwayat penggunaan obat (Alternatif / NAPZA) : [  ] Ya   [  ] Tidak ada\n9. Rawayat trauma atau kekerasan:   [  ] Ada    [  ] Tidak ada\n10. Pemahaman tentang Kesehatan\n    [  ] Paham & patuh  [  ] Paham & tidak patuh    [  ] Tidak Pernah   [  ] Tidak paham\n11. Kemampuan menerima perubahan (mekanisme koping)\n    [  ] Mampuan beradaptasi    [  ] Tidak mampu beradaptasi\n12. Aspek legal: [  ] Ada   [  ] Tidak ada");
+        TDiagnosis.setMaximumSize(new java.awt.Dimension(2147483647, 1147483647));
         TDiagnosis.setName("TDiagnosis"); // NOI18N
         TDiagnosis.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -944,7 +943,7 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         scrollPane5.setViewportView(TDiagnosis);
 
         FormInput.add(scrollPane5);
-        scrollPane5.setBounds(74, 130, 323, 73);
+        scrollPane5.setBounds(450, 150, 540, 320);
 
         scrollPane7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         scrollPane7.setName("scrollPane7"); // NOI18N
@@ -952,6 +951,7 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         TKelompok.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         TKelompok.setColumns(20);
         TKelompok.setRows(5);
+        TKelompok.setText("[  ] Diagnosa :\n[  ] Terapi, Obat, Tindakan :\n[  ] Fungsi Fisik, Mental :\n[  ] Lain - Lain");
         TKelompok.setName("TKelompok"); // NOI18N
         TKelompok.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -961,7 +961,7 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         scrollPane7.setViewportView(TKelompok);
 
         FormInput.add(scrollPane7);
-        scrollPane7.setBounds(508, 130, 346, 73);
+        scrollPane7.setBounds(20, 460, 410, 70);
 
         BtnAllMasalah.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Search-16x16.png"))); // NOI18N
         BtnAllMasalah.setMnemonic('2');
@@ -979,7 +979,7 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
             }
         });
         FormInput.add(BtnAllMasalah);
-        BtnAllMasalah.setBounds(351, 540, 28, 23);
+        BtnAllMasalah.setBounds(370, 410, 28, 23);
 
         TglMasuk.setEditable(false);
         TglMasuk.setHighlighter(null);
@@ -1028,7 +1028,7 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-03-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-12-2025" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -1042,7 +1042,7 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-03-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-12-2025" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -1098,7 +1098,7 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         PanelAccor.setPreferredSize(new java.awt.Dimension(470, 43));
         PanelAccor.setLayout(new java.awt.BorderLayout(1, 1));
 
-        ChkAccor.setBackground(new java.awt.Color(255,250,250));
+        ChkAccor.setBackground(new java.awt.Color(255, 250, 250));
         ChkAccor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/kiri.png"))); // NOI18N
         ChkAccor.setSelected(true);
         ChkAccor.setFocusable(false);
@@ -1213,8 +1213,8 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
             Valid.textKosong(TKelompok,"Kelompok Resiko");
         }else if(Perencanaan.getText().trim().equals("")){
             Valid.textKosong(Perencanaan,"Riwayat Penyakit Dahulu");
-        }else if(Assemen.getText().trim().equals("")){
-            Valid.textKosong(Assemen,"Riwayat Penyakit Keluarga");
+//        }else if(Assemen.getText().trim().equals("")){
+//            Valid.textKosong(Assemen,"Riwayat Penyakit Keluarga");
         }else if(Identifikasi.getText().trim().equals("")){
             Valid.textKosong(Identifikasi,"Riwayat Pengobatan");
         }else if(Perencanaan.getText().trim().equals("")){
@@ -1293,8 +1293,8 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
             Valid.textKosong(TKelompok,"Kelompok Resiko");
         }else if(Perencanaan.getText().trim().equals("")){
             Valid.textKosong(Perencanaan,"Riwayat Penyakit Dahulu");
-        }else if(Assemen.getText().trim().equals("")){
-            Valid.textKosong(Assemen,"Riwayat Penyakit Keluarga");
+//        }else if(Assemen.getText().trim().equals("")){
+//            Valid.textKosong(Assemen,"Riwayat Penyakit Keluarga");
         }else if(Identifikasi.getText().trim().equals("")){
             Valid.textKosong(Identifikasi,"Riwayat Pengobatan");
         }else if(Perencanaan.getText().trim().equals("")){
@@ -1994,7 +1994,6 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
     private widget.Label jLabel31;
     private widget.Label jLabel32;
     private widget.Label jLabel34;
-    private widget.Label jLabel40;
     private widget.Label jLabel5;
     private widget.Label jLabel6;
     private widget.Label jLabel7;
@@ -2108,11 +2107,11 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         TglEvaluasi.setDate(new Date());
         KdDok1.setText("");
         KdDok2.setText("");
-        TDiagnosis.setText("");
-        TKelompok.setText("");
-        Assemen.setText("");
-        Identifikasi.setText("");
-        Perencanaan.setText("");
+        TDiagnosis.setText("1. Fisik, fungsional, kognitif, kemandirian\n    [  ] Sadar\t\t[  ] Fisik Normal\t[  ] Ada gangguan fisik\t[  ] Dibantu Petugas\n    [  ] Tidak sadar\t[  ] Mandiri\t[  ] Dibantu Penuh\n2. Riwayat Kesehatan : [  ] Tidak Pernah Dirawat\t[  ] Pernah Dirawat\n3. Perilaku Psikososiokultural\n    [  ] Tenang\t[  ] Depresi\t[  ] Marah\t[  ] Cemas\t[  ] Lain - Lain \n4. Kesehatan Mental\n    [  ] Ada riwayat gangguan jiwa\t[  ] Tidak ada gangguan\t[  ] Gagal Pengobatan\n    [  ] Terjadinya gangguan serius \t[  ] Dalam Pengobatan\n5. Tersedianya dukungan keluarga, kemampuan merawat dari pemberi asuhan\n    [  ] Handal\t[  ] Krisis\t[  ] Dipertanyakan\t[  ] Tidak ada\n6. Finansial / sumber keuangan\n    [  ] Pegawai negeri [  ] Wiraswasta [  ] Pensiunan\n    [  ] BUruh / pekerja tidak tetap    [  ] Karyawan swasta\n7. Asuransi / Peminjaman:   [  ] Ada, aktif [  ] Ada, tidak aktif   [  ] Tidak ada\n8. Riwayat penggunaan obat (Alternatif / NAPZA) : [  ] Ya   [  ] Tidak ada\n9. Rawayat trauma atau kekerasan:   [  ] Ada    [  ] Tidak ada\n10. Pemahaman tentang Kesehatan\n    [  ] Paham & patuh  [  ] Paham & tidak patuh    [  ] Tidak Pernah   [  ] Tidak paham\n11. Kemampuan menerima perubahan (mekanisme koping)\n    [  ] Mampuan beradaptasi    [  ] Tidak mampu beradaptasi\n12. Aspek legal: [  ] Ada   [  ] Tidak ada");
+        Assemen.setText("-");
+        Perencanaan.setText("[  ] Identifikasi diagnosa, prognitis, kebutuhan dan saran hasil asuhan pasien\n[  ] Validasi rencana asuhan pelayanan\n[  ] Fasilitas untuk mengatasi masalah dan konflik\n[  ] Rencanakan pemberian informasi ke pasien / keluarga pengambil keputusan\n[  ] Monitor pembiayaan dan penjamin pasien\n[  ] Lain - lain");
+        TKelompok.setText("[  ] Diagnosa :\n[  ] Terapi, Obat, Tindakan :\n[  ] Fungsi Fisik, Mental :\n[  ] Lain - Lain");
+        Identifikasi.setText("[  ] Asuhan pelayanan yang tidak sesuai kebutuhan\n[  ] Over / Under utilisasi pelayanan sesuai standar yang digunakan\n[  ] Ketidakpatuhan pasien\n[  ] Edukasi / pemahaman kurang memadai terkait proses penyakit, kondisi penyakit dan rencana pengobatan\n[  ] Kurang dukungan keluarga\n[  ] Penurunan determinasi pasien (tingkat keparahan / komplikasi\n[  ] Kendala keuangan ketika komplikasi meningkat\n[  ] Pemulangan atau rujukan yang belum memenuhi kriteria atau ditunda\n[  ] Lain - lain ");
         for (i = 0; i < tabModeMasalah.getRowCount(); i++) {
             tabModeMasalah.setValueAt(false,i,0);
         }

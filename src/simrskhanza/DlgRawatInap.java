@@ -9556,6 +9556,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         DTPCari1.setDate(awal);
         DTPCari2.setDate(akhir);
         TCari.setText(norwt);
+        TAlergi.setText(Sequel.alergi(TNoRM.getText(), "false"));
         ChkInput.setSelected(true);
         isForm();
         ChkInput1.setSelected(true);

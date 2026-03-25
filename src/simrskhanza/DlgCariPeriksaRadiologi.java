@@ -992,7 +992,6 @@ public class DlgCariPeriksaRadiologi extends javax.swing.JDialog {
 
         TabData.setBackground(new java.awt.Color(254, 255, 254));
         TabData.setForeground(new java.awt.Color(50, 50, 50));
-        TabData.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         TabData.setName("TabData"); // NOI18N
         TabData.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2297,7 +2296,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
     private widget.ScrollPane Scroll3;
     private widget.ScrollPane Scroll4;
     private widget.ScrollPane Scroll5;
-    private widget.TextBox TCari;
+    public widget.TextBox TCari;
     private javax.swing.JTabbedPane TabData;
     private widget.Tanggal Tgl1;
     private widget.Tanggal Tgl2;
@@ -2336,7 +2335,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
     private widget.TextBox nmptg;
     private widget.panelisi panelGlass6;
     private widget.panelisi panelGlass7;
-    private widget.panelisi panelisi1;
+    public widget.panelisi panelisi1;
     private widget.panelisi panelisi3;
     private widget.panelisi panelisi8;
     private javax.swing.JMenuItem ppBelumKeluarBacaan;

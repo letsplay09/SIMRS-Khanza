@@ -1308,8 +1308,7 @@ public final class SuratPersetujuanUmum extends javax.swing.JDialog {
                     "surat_persetujuan_umum.jkpj,surat_persetujuan_umum.bertindak_atas,surat_persetujuan_umum.no_telp,surat_persetujuan_umum.nip,"+
                     "petugas.nama from surat_persetujuan_umum inner join reg_periksa on surat_persetujuan_umum.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                    "inner join petugas on surat_persetujuan_umum.nip=petugas.nip where "+
-                    "surat_persetujuan_umum.tanggal between ? and ? order by surat_persetujuan_umum.tanggal");
+                    "inner join petugas on surat_persetujuan_umum.nip=petugas.nip order by surat_persetujuan_umum.tanggal limit 50");
             }else{
                 ps=koneksi.prepareStatement(
                     "select surat_persetujuan_umum.no_surat,reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,"+
@@ -1319,27 +1318,26 @@ public final class SuratPersetujuanUmum extends javax.swing.JDialog {
                     "petugas.nama from surat_persetujuan_umum inner join reg_periksa on surat_persetujuan_umum.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                     "inner join petugas on surat_persetujuan_umum.nip=petugas.nip where "+
-                    "surat_persetujuan_umum.tanggal between ? and ? and "+
                     "(reg_periksa.no_rawat like ? or pasien.no_rkm_medis like ? or pasien.nm_pasien like ? or "+
                     "surat_persetujuan_umum.no_telp like ? or surat_persetujuan_umum.nama_pj like ? or "+
                     "surat_persetujuan_umum.nip like ? or petugas.nama like ?) "+
-                    "order by surat_persetujuan_umum.tanggal");
+                    "order by surat_persetujuan_umum.tanggal limit 50");
             }
                 
             try {
                 if(TCari.getText().toString().trim().equals("")){
-                    ps.setString(1,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
-                    ps.setString(2,Valid.SetTgl(DTPCari2.getSelectedItem()+""));
+//                    ps.setString(1,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
+//                    ps.setString(2,Valid.SetTgl(DTPCari2.getSelectedItem()+""));
                 }else{
-                    ps.setString(1,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
-                    ps.setString(2,Valid.SetTgl(DTPCari2.getSelectedItem()+""));
+//                    ps.setString(1,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
+//                    ps.setString(2,Valid.SetTgl(DTPCari2.getSelectedItem()+""));
+                    ps.setString(1,"%"+TCari.getText()+"%");
+                    ps.setString(2,"%"+TCari.getText()+"%");
                     ps.setString(3,"%"+TCari.getText()+"%");
                     ps.setString(4,"%"+TCari.getText()+"%");
                     ps.setString(5,"%"+TCari.getText()+"%");
                     ps.setString(6,"%"+TCari.getText()+"%");
                     ps.setString(7,"%"+TCari.getText()+"%");
-                    ps.setString(8,"%"+TCari.getText()+"%");
-                    ps.setString(9,"%"+TCari.getText()+"%");
                 }
                   
                 rs=ps.executeQuery();
@@ -1416,6 +1414,7 @@ public final class SuratPersetujuanUmum extends javax.swing.JDialog {
                     JK.setText(rs.getString("jk"));
                     LahirPasien.setText(rs.getString("tgl_lahir"));
                     UmurPJ.setText(rs.getString("umurdaftar")+" "+rs.getString("sttsumur"));
+                    TCari.setText(rs.getString("no_rkm_medis"));
                 }
             } catch (Exception e) {
                 System.out.println("Notif : "+e);

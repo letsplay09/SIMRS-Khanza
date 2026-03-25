@@ -2112,10 +2112,9 @@ public final class sekuel {
         try {
             if(!norm.equals("")){
                 ps = connect.prepareStatement(
-                    "select reg_periksa.no_rkm_medis, alergi_pasien.*, satu_sehat_ref_allergy.display from alergi_pasien "+
-                    "inner join reg_periksa on alergi_pasien.no_rawat=reg_periksa.no_rawat " +
+                    "select alergi_pasien.*, satu_sehat_ref_allergy.display from alergi_pasien "+
                     "inner join satu_sehat_ref_allergy on alergi_pasien.allergy_code=satu_sehat_ref_allergy.kode "+
-                    "where reg_periksa.no_rkm_medis =? order by alergi_pasien.no_rawat desc ");
+                    "where alergi_pasien.no_rkm_medis =? order by alergi_pasien.no_rawat desc ");
                 try {
                     ps.setString(1,norm);
                     rs=ps.executeQuery();
@@ -2142,6 +2141,35 @@ public final class sekuel {
             System.out.println("Notif : "+e);
         }
         return alergi;
+    }
+    
+    public String pemeriksaan_ralan(String no_rawat){
+        String eval = "";
+        try {
+            if(!no_rawat.equals("")){
+                ps = connect.prepareStatement(
+                    "select evaluasi from pemeriksaan_ralan WHERE no_rawat = ?");
+                try {
+                    ps.setString(1,no_rawat);
+                    rs=ps.executeQuery();
+                    while(rs.next()){
+                        eval += rs.getString("evaluasi") + ", ";
+                    }
+                } catch (Exception e) {
+                    System.out.println("Notifikasi : "+e);
+                }finally{
+                    if(rs != null){
+                        rs.close();
+                    }
+                    if(ps != null){
+                        ps.close();
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notif : "+e);
+        }
+        return eval;
     }
 
     public class Painter extends Canvas {

@@ -780,6 +780,10 @@ public class DlgBilingRalan extends javax.swing.JDialog {
         BtnCari = new widget.Button();
         jLabel4 = new widget.Label();
         DTPTgl = new widget.Tanggal();
+        jLabel7 = new widget.Label();
+        TxtObat7Hr = new widget.TextBox();
+        jLabel10 = new widget.Label();
+        TxtObatKronis = new widget.TextBox();
         TabRawat = new javax.swing.JTabbedPane();
         Scroll = new widget.ScrollPane();
         tbBilling = new widget.Table();
@@ -1733,7 +1737,7 @@ public class DlgBilingRalan extends javax.swing.JDialog {
 
         TNoRw.setHighlighter(null);
         TNoRw.setName("TNoRw"); // NOI18N
-        TNoRw.setPreferredSize(new java.awt.Dimension(150, 23));
+        TNoRw.setPreferredSize(new java.awt.Dimension(140, 23));
         TNoRw.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 TNoRwKeyPressed(evt);
@@ -1744,13 +1748,13 @@ public class DlgBilingRalan extends javax.swing.JDialog {
         TNoRM.setEditable(false);
         TNoRM.setHighlighter(null);
         TNoRM.setName("TNoRM"); // NOI18N
-        TNoRM.setPreferredSize(new java.awt.Dimension(100, 23));
+        TNoRM.setPreferredSize(new java.awt.Dimension(90, 23));
         panelGlass1.add(TNoRM);
 
         TPasien.setEditable(false);
         TPasien.setHighlighter(null);
         TPasien.setName("TPasien"); // NOI18N
-        TPasien.setPreferredSize(new java.awt.Dimension(320, 23));
+        TPasien.setPreferredSize(new java.awt.Dimension(270, 23));
         panelGlass1.add(TPasien);
 
         BtnCari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/accept.png"))); // NOI18N
@@ -1775,7 +1779,7 @@ public class DlgBilingRalan extends javax.swing.JDialog {
         jLabel4.setPreferredSize(new java.awt.Dimension(65, 23));
         panelGlass1.add(jLabel4);
 
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-08-2023 01:32:33" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-01-2026 08:25:23" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
@@ -1787,12 +1791,43 @@ public class DlgBilingRalan extends javax.swing.JDialog {
         });
         panelGlass1.add(DTPTgl);
 
+        jLabel7.setText("Non-Kronis:");
+        jLabel7.setName("jLabel7"); // NOI18N
+        jLabel7.setPreferredSize(new java.awt.Dimension(65, 23));
+        panelGlass1.add(jLabel7);
+
+        TxtObat7Hr.setEditable(false);
+        TxtObat7Hr.setHighlighter(null);
+        TxtObat7Hr.setName("TxtObat7Hr"); // NOI18N
+        TxtObat7Hr.setPreferredSize(new java.awt.Dimension(120, 23));
+        TxtObat7Hr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtObat7HrActionPerformed(evt);
+            }
+        });
+        panelGlass1.add(TxtObat7Hr);
+
+        jLabel10.setText("Kronis:");
+        jLabel10.setName("jLabel10"); // NOI18N
+        jLabel10.setPreferredSize(new java.awt.Dimension(50, 23));
+        panelGlass1.add(jLabel10);
+
+        TxtObatKronis.setEditable(false);
+        TxtObatKronis.setHighlighter(null);
+        TxtObatKronis.setName("TxtObatKronis"); // NOI18N
+        TxtObatKronis.setPreferredSize(new java.awt.Dimension(120, 23));
+        TxtObatKronis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtObatKronisActionPerformed(evt);
+            }
+        });
+        panelGlass1.add(TxtObatKronis);
+
         internalFrame1.add(panelGlass1, java.awt.BorderLayout.PAGE_START);
 
         TabRawat.setBackground(new java.awt.Color(255, 255, 253));
         TabRawat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(241, 246, 236)));
         TabRawat.setForeground(new java.awt.Color(50, 50, 50));
-        TabRawat.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         TabRawat.setName("TabRawat"); // NOI18N
         TabRawat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3995,6 +4030,14 @@ private void MnPeriksaLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
         }
     }//GEN-LAST:event_MnCariPeriksaLabMBActionPerformed
 
+    private void TxtObat7HrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtObat7HrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtObat7HrActionPerformed
+
+    private void TxtObatKronisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtObatKronisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtObatKronisActionPerformed
+
  
 
     /**
@@ -4075,6 +4118,8 @@ private void MnPeriksaLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     private widget.TextBox TagihanPPn;
     private widget.TextBox TotalObat;
     private widget.TextBox TtlSemua;
+    private widget.TextBox TxtObat7Hr;
+    private widget.TextBox TxtObatKronis;
     private javax.swing.JDialog WindowGantiDokterPoli;
     private javax.swing.JDialog WindowGantiPenjab;
     private javax.swing.JDialog WindowGantiPoli;
@@ -4101,6 +4146,7 @@ private void MnPeriksaLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     private widget.InternalFrame internalFrame5;
     private widget.InternalFrame internalFrame6;
     private widget.InternalFrame internalFrame7;
+    private widget.Label jLabel10;
     private widget.Label jLabel12;
     private widget.Label jLabel13;
     private widget.Label jLabel14;
@@ -4110,6 +4156,7 @@ private void MnPeriksaLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     private widget.Label jLabel4;
     private widget.Label jLabel5;
     private widget.Label jLabel6;
+    private widget.Label jLabel7;
     private widget.Label jLabel8;
     private widget.Label jLabel9;
     private javax.swing.JPopupMenu jPopupMenu1;
@@ -4177,6 +4224,7 @@ private void MnPeriksaLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                     TNoRM.setText(rscarirm.getString(1));
                     no_rkm_medis=rscarirm.getString(1);
                 }
+                prosesCariObat7Hari();
 	    }catch (Exception e) {
                 TNoRM.setText("");
                 System.out.println("Notifikasi : "+e);
@@ -4485,7 +4533,7 @@ private void MnPeriksaLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                          
                     umurdaftar=rsreg.getString("umurdaftar")+rsreg.getString("sttsumur");
                     tgl_registrasi=rsreg.getString("tgl_registrasi");
-                    tabModeRwJlDr.addRow(new Object[]{true,"Tanggal & Jam",": "+rsreg.getString("tgl_registrasi")+" "+rsreg.getString("jam"),"",null,null,null,null,"-"});
+                    tabModeRwJlDr.addRow(new Object[]{true,"Tanggal",": "+rsreg.getString("tgl_registrasi"),"",null,null,null,null,"-"});
                     tabModeRwJlDr.addRow(new Object[]{true,"No.RM",": "+TNoRM.getText(),"",null,null,null,null,"-"});
                     tabModeRwJlDr.addRow(new Object[]{true,"Nama Pasien",": "+TPasien.getText()+" ("+rsreg.getString("umurdaftar")+rsreg.getString("sttsumur")+")","",null,null,null,null,"-"});
                     pscarialamat=koneksi.prepareStatement(sqlpscarialamat); 
@@ -4769,6 +4817,7 @@ private void MnPeriksaLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                 pscarilab.setString(1,TNoRw.getText());
                 rscarilab=pscarilab.executeQuery();
                 subttl=0;
+//                tabModeRwJlDr.addRow(new Object[]{true,"Tindakan Lab",":","-",null,null,null,null,"Ralan Dokter"});
                 while(rscarilab.next()){
                     psdetaillab=koneksi.prepareStatement(sqlpsdetaillab);
                     try {
@@ -4794,6 +4843,9 @@ private void MnPeriksaLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                                    rscarilab.getDouble("biaya"),rscarilab.getDouble("jml"),ralanparamedis,(rscarilab.getDouble("total")+ralanparamedis),"Laborat"});
                     subttl=subttl+rscarilab.getDouble("total")+ralanparamedis;
                 }
+//                if(subttl>0){ 
+//                    tabModeRwJlDr.addRow(new Object[]{true,"","Pemeriksaan Lab : "+Valid.SetAngka3(subttl),"-",null,null,null,null,"Laborat"});
+//                }
             } catch (Exception e) {
                 System.out.println("Notifikasi : "+e); 
             } finally{
@@ -4816,6 +4868,7 @@ private void MnPeriksaLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                 pscariradiologi.setString(1,TNoRw.getText());
                 rscariradiologi=pscariradiologi.executeQuery();
                 subttl=0;
+//                tabModeRwJlDr.addRow(new Object[]{true,"Tindakan Rad",":","-",null,null,null,null,"Ralan Dokter"});
                 while(rscariradiologi.next()){
                     tamkur=0;
                     pstamkur=koneksi.prepareStatement(sqlpstamkur);
@@ -4842,6 +4895,9 @@ private void MnPeriksaLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                                    rscariradiologi.getDouble("biaya"),rscariradiologi.getDouble("jml"),tamkur,(rscariradiologi.getDouble("total")+tamkur),"Radiologi"});
                     subttl=subttl+rscariradiologi.getDouble("total")+tamkur;
                 }
+//                if(subttl>0){ 
+//                    tabModeRwJlDr.addRow(new Object[]{true,"","Pemeriksaan Rad : "+Valid.SetAngka3(subttl),"-",null,null,null,null,"Radiologi"});
+//                }
             } catch (Exception e) {
                 System.out.println("Notifikasi : "+e); 
             } finally{
@@ -4962,9 +5018,65 @@ private void MnPeriksaLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                 }
                 tabModeRwJlDr.addRow(new Object[]{true,"",""+Valid.SetAngka3(subttl+ppnobat),"",null,null,null,null,"TtlObat"});            
             }else{
-                tabModeRwJlDr.addRow(new Object[]{true,"",""+Valid.SetAngka3(subttl),"",null,null,null,null,"TtlObat"});            
+                tabModeRwJlDr.addRow(new Object[]{true,"",""+Valid.SetAngka3(subttl),"",null,null,null,null,"TtlObat"});
             }                
         }
+    }
+    
+    private void prosesCariObat7Hari() {         
+        double total7hari = 0;
+        double jmlobat = 7;
+        try{      
+            pscariobat=koneksi.prepareStatement(sqlpscariobat);
+            try {
+                pscariobat.setString(1,TNoRw.getText());
+                rscariobat=pscariobat.executeQuery();
+                //embalase=0;
+                if(centangobatralan.equals("Yes")){
+                    while(rscariobat.next()){
+                        if(rscariobat.getDouble("jml") == 10 || rscariobat.getDouble("jml") <= 7){
+                            jmlobat = rscariobat.getDouble("jml");
+                        }else if(rscariobat.getDouble("jml") == 15){
+                            jmlobat = 4;
+                        }else if(rscariobat.getDouble("jml") == 30){
+                            jmlobat = 7;
+                        }else if(rscariobat.getDouble("jml") == 60){
+                            jmlobat = 14;
+                        }else if(rscariobat.getDouble("jml") == 90){
+                            jmlobat = 21;
+                        }else if(rscariobat.getDouble("jml") == 120){
+                            jmlobat = 28;
+                        }else{
+                            jmlobat = rscariobat.getDouble("jml") / 4 ;
+                            jmlobat = jmlobat / 7;
+                            jmlobat = jmlobat - jmlobat % 1;
+                            jmlobat = jmlobat * 7;
+                        }
+                        total7hari = total7hari + (rscariobat.getDouble("biaya_obat") * jmlobat);
+                        
+                        System.out.println("Notif : "+TNoRw.getText() +" " + rscariobat.getString("nama_brng") + " " + rscariobat.getDouble("biaya_obat") + " " + rscariobat.getDouble("jml") + " " + rscariobat.getDouble("biaya_obat") * jmlobat);
+                    }
+                }else{
+                    while(rscariobat.next()){
+                        
+                    }
+                }                    
+            } catch (Exception e) {
+                System.out.println("Notifikasi : "+e); 
+            } finally{
+                if(rscariobat!=null){
+                    rscariobat.close();
+                }
+                if(pscariobat!=null){
+                    pscariobat.close();
+                }
+            }            
+        }catch(Exception e){
+            System.out.println("Notifikasi : "+e);
+        }     
+        TxtObat7Hr.setText(Valid.SetAngka3(total7hari));
+        TxtObatKronis.setText(Valid.SetAngka3(total7hari + 6000));
+        System.out.println(Sequel.pemeriksaan_ralan(TNoRw.getText()));      
     }
 
 

@@ -5286,7 +5286,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         TInstruksi.setText("");
         TPemeriksaan.setText("");
         TPenilaian.setText("");
-        TAlergi.setText("");
+        TAlergi.setText(Sequel.alergi(TNoRM.getText(), "false"));
         TBerat.setText("");
         TTinggi.setText("");
         TNadi.setText("");
@@ -10982,6 +10982,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         KdDok3.setText(KdDok.getText());
         TDokter2.setText(TDokter.getText()); 
         TDokter3.setText(TDokter.getText()); 
+        TAlergi.setText(Sequel.alergi(TNoRM.getText(), "false"));
         ChkInput.setSelected(true);
         isForm();
         ChkInput1.setSelected(true);

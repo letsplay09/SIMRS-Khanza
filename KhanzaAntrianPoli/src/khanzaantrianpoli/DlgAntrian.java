@@ -126,6 +126,85 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
             }
         }
         Table3.setDefaultRenderer(Object.class, new WarnaTable());
+
+
+        tabMode4=new DefaultTableModel(null,row){
+              @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
+        };
+        Table4.setModel(tabMode4);
+
+        Table4.setPreferredScrollableViewportSize(new Dimension(800,800));
+        Table4.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+
+        for (int i = 0; i < 6; i++) {
+            TableColumn column = Table4.getColumnModel().getColumn(i);
+            if(i==0){
+                column.setPreferredWidth(60);
+            }else if(i==1){
+                column.setPreferredWidth(100);
+            }else if(i==2){
+                column.setPreferredWidth(200);
+            }else if(i==3){
+                column.setPreferredWidth(100);   
+            }else if(i==4){
+                column.setPreferredWidth(200);
+            }else if(i==5){
+                column.setPreferredWidth(100);
+            }
+        }
+        Table4.setDefaultRenderer(Object.class, new WarnaTable());
+
+        tabMode5=new DefaultTableModel(null,row){
+              @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
+        };
+        Table5.setModel(tabMode5);
+
+        Table5.setPreferredScrollableViewportSize(new Dimension(800,800));
+        Table5.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+
+        for (int i = 0; i < 6; i++) {
+            TableColumn column = Table5.getColumnModel().getColumn(i);
+            if(i==0){
+                column.setPreferredWidth(60);
+            }else if(i==1){
+                column.setPreferredWidth(100);
+            }else if(i==2){
+                column.setPreferredWidth(200);
+            }else if(i==3){
+                column.setPreferredWidth(100);   
+            }else if(i==4){
+                column.setPreferredWidth(200);
+            }else if(i==5){
+                column.setPreferredWidth(100);
+            }
+        }
+        Table5.setDefaultRenderer(Object.class, new WarnaTable());
+
+        tabMode6=new DefaultTableModel(null,row){
+              @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
+        };
+        Table6.setModel(tabMode6);
+
+        Table6.setPreferredScrollableViewportSize(new Dimension(800,800));
+        Table6.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+
+        for (int i = 0; i < 6; i++) {
+            TableColumn column = Table6.getColumnModel().getColumn(i);
+            if(i==0){
+                column.setPreferredWidth(60);
+            }else if(i==1){
+                column.setPreferredWidth(100);
+            }else if(i==2){
+                column.setPreferredWidth(200);
+            }else if(i==3){
+                column.setPreferredWidth(100);   
+            }else if(i==4){
+                column.setPreferredWidth(200);
+            }else if(i==5){
+                column.setPreferredWidth(100);
+            }
+        }
+        Table6.setDefaultRenderer(Object.class, new WarnaTable());
         
         
         javax.swing.Timer timer = new javax.swing.Timer(100, this);
@@ -135,6 +214,9 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
     private final DefaultTableModel tabMode1;
     private final DefaultTableModel tabMode2;
     private final DefaultTableModel tabMode3;
+    private final DefaultTableModel tabMode4;
+    private final DefaultTableModel tabMode5;
+    private final DefaultTableModel tabMode6;
     private DlgCariDokter dokter=new DlgCariDokter(null,false);
     private sekuel Sequel=new sekuel();
     private validasi Valid=new validasi();
@@ -168,10 +250,21 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
         jPanel8 = new javax.swing.JPanel();
         labelpas3 = new widget.Label();
         labeldokter3 = new widget.Label();
-        internalFrame5 = new widget.InternalFrame();
-        paneliklan = new usu.widget.glass.PanelGlass();
-        panelruntext = new javax.swing.JPanel();
-        labelruntext = new widget.Label();
+        form4 = new widget.InternalFrame();
+        labelantri4 = new widget.Label();
+        jPanel9 = new javax.swing.JPanel();
+        labelpas4 = new widget.Label();
+        labeldokter4 = new widget.Label();
+        form5 = new widget.InternalFrame();
+        labelantri5 = new widget.Label();
+        jPanel10 = new javax.swing.JPanel();
+        labelpas5 = new widget.Label();
+        labeldokter5 = new widget.Label();
+        form6 = new widget.InternalFrame();
+        labelantri6 = new widget.Label();
+        jPanel11 = new javax.swing.JPanel();
+        labelpas6 = new widget.Label();
+        labeldokter6 = new widget.Label();
         Popup1 = new javax.swing.JPopupMenu();
         ppAntri1 = new javax.swing.JMenuItem();
         ppUndo1 = new javax.swing.JMenuItem();
@@ -186,6 +279,18 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
         norawat1 = new widget.TextBox();
         norawat2 = new widget.TextBox();
         norawat3 = new widget.TextBox();
+        Popup5 = new javax.swing.JPopupMenu();
+        ppAntri4 = new javax.swing.JMenuItem();
+        ppUndo4 = new javax.swing.JMenuItem();
+        Popup6 = new javax.swing.JPopupMenu();
+        ppAntri5 = new javax.swing.JMenuItem();
+        ppUndo5 = new javax.swing.JMenuItem();
+        Popup7 = new javax.swing.JPopupMenu();
+        ppAntri6 = new javax.swing.JMenuItem();
+        ppUndo6 = new javax.swing.JMenuItem();
+        norawat4 = new widget.TextBox();
+        norawat5 = new widget.TextBox();
+        norawat6 = new widget.TextBox();
         internalFrame1 = new widget.InternalFrame();
         panelisi1 = new widget.panelisi();
         BtnDisplay = new widget.Button();
@@ -227,6 +332,42 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
         BtnAntri3 = new widget.Button();
         BtnBatal3 = new widget.Button();
         BtnBatal6 = new widget.Button();
+        jPanel12 = new javax.swing.JPanel();
+        panelisi8 = new widget.panelisi();
+        BtnSeek8 = new widget.Button();
+        Unit4 = new widget.TextBox();
+        BtnSeek9 = new widget.Button();
+        Dokter4 = new widget.TextBox();
+        Scroll3 = new widget.ScrollPane();
+        Table4 = new widget.Table();
+        panelisi9 = new widget.panelisi();
+        BtnAntri4 = new widget.Button();
+        BtnBatal7 = new widget.Button();
+        BtnBatal8 = new widget.Button();
+        jPanel13 = new javax.swing.JPanel();
+        panelisi10 = new widget.panelisi();
+        BtnSeek10 = new widget.Button();
+        Unit5 = new widget.TextBox();
+        BtnSeek11 = new widget.Button();
+        Dokter5 = new widget.TextBox();
+        Scroll4 = new widget.ScrollPane();
+        Table5 = new widget.Table();
+        panelisi11 = new widget.panelisi();
+        BtnAntri5 = new widget.Button();
+        BtnBatal9 = new widget.Button();
+        BtnBatal10 = new widget.Button();
+        jPanel14 = new javax.swing.JPanel();
+        panelisi12 = new widget.panelisi();
+        BtnSeek12 = new widget.Button();
+        Unit6 = new widget.TextBox();
+        BtnSeek13 = new widget.Button();
+        Dokter6 = new widget.TextBox();
+        Scroll5 = new widget.ScrollPane();
+        Table6 = new widget.Table();
+        panelisi13 = new widget.panelisi();
+        BtnAntri6 = new widget.Button();
+        BtnBatal11 = new widget.Button();
+        BtnBatal12 = new widget.Button();
 
         DlgDisplay.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         DlgDisplay.setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
@@ -235,7 +376,7 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
         jPanel5.setBackground(new java.awt.Color(150, 255, 150));
         jPanel5.setName("jPanel5"); // NOI18N
         jPanel5.setPreferredSize(new java.awt.Dimension(550, 100));
-        jPanel5.setLayout(new java.awt.GridLayout(3, 0));
+        jPanel5.setLayout(new java.awt.GridLayout(3, 2));
 
         form1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(100, 200, 100)), " Antrian Pasien 1", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 0, 38), new java.awt.Color(50, 100, 50))); // NOI18N
         form1.setName("form1"); // NOI18N
@@ -245,11 +386,11 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
         form1.setLayout(new java.awt.BorderLayout());
 
         labelantri1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "No.Antrian :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
-        labelantri1.setForeground(new java.awt.Color(50, 100, 50));
+        labelantri1.setForeground(new java.awt.Color(0, 0, 0));
         labelantri1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelantri1.setText("001");
+        labelantri1.setText("000");
         labelantri1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        labelantri1.setFont(new java.awt.Font("Serif", 0, 86)); // NOI18N
+        labelantri1.setFont(new java.awt.Font("Serif", 1, 100)); // NOI18N
         labelantri1.setName("labelantri1"); // NOI18N
         labelantri1.setPreferredSize(new java.awt.Dimension(200, 50));
         form1.add(labelantri1, java.awt.BorderLayout.EAST);
@@ -259,21 +400,21 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
         jPanel6.setLayout(new java.awt.GridLayout(2, 0));
 
         labelpas1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "Pasien :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
-        labelpas1.setForeground(new java.awt.Color(50, 100, 50));
+        labelpas1.setForeground(new java.awt.Color(0, 0, 0));
         labelpas1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labelpas1.setText("Pasien 1");
         labelpas1.setFocusable(false);
-        labelpas1.setFont(new java.awt.Font("Serif", 0, 26)); // NOI18N
+        labelpas1.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         labelpas1.setName("labelpas1"); // NOI18N
         labelpas1.setPreferredSize(new java.awt.Dimension(150, 50));
         jPanel6.add(labelpas1);
 
         labeldokter1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "Dokter :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
-        labeldokter1.setForeground(new java.awt.Color(50, 100, 50));
+        labeldokter1.setForeground(new java.awt.Color(0, 0, 0));
         labeldokter1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labeldokter1.setText("Dokter 1");
         labeldokter1.setFocusable(false);
-        labeldokter1.setFont(new java.awt.Font("Serif", 0, 26)); // NOI18N
+        labeldokter1.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         labeldokter1.setName("labeldokter1"); // NOI18N
         labeldokter1.setPreferredSize(new java.awt.Dimension(150, 50));
         jPanel6.add(labeldokter1);
@@ -290,11 +431,12 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
         form2.setLayout(new java.awt.BorderLayout());
 
         labelantri2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "No.Antrian :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
-        labelantri2.setForeground(new java.awt.Color(50, 100, 50));
+        labelantri2.setForeground(new java.awt.Color(0, 0, 0));
         labelantri2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelantri2.setText("002");
+        labelantri2.setText("000");
+        labelantri2.setToolTipText("");
         labelantri2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        labelantri2.setFont(new java.awt.Font("Serif", 0, 86)); // NOI18N
+        labelantri2.setFont(new java.awt.Font("Serif", 1, 100)); // NOI18N
         labelantri2.setName("labelantri2"); // NOI18N
         labelantri2.setPreferredSize(new java.awt.Dimension(200, 50));
         form2.add(labelantri2, java.awt.BorderLayout.EAST);
@@ -304,21 +446,21 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
         jPanel7.setLayout(new java.awt.GridLayout(2, 0));
 
         labelpas2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "Pasien :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
-        labelpas2.setForeground(new java.awt.Color(50, 100, 50));
+        labelpas2.setForeground(new java.awt.Color(0, 0, 0));
         labelpas2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labelpas2.setText("Pasien 2");
         labelpas2.setFocusable(false);
-        labelpas2.setFont(new java.awt.Font("Serif", 0, 26)); // NOI18N
+        labelpas2.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         labelpas2.setName("labelpas2"); // NOI18N
         labelpas2.setPreferredSize(new java.awt.Dimension(150, 50));
         jPanel7.add(labelpas2);
 
         labeldokter2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "Dokter :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
-        labeldokter2.setForeground(new java.awt.Color(50, 100, 50));
+        labeldokter2.setForeground(new java.awt.Color(0, 0, 0));
         labeldokter2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labeldokter2.setText("Dokter 2");
         labeldokter2.setFocusable(false);
-        labeldokter2.setFont(new java.awt.Font("Serif", 0, 26)); // NOI18N
+        labeldokter2.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         labeldokter2.setName("labeldokter2"); // NOI18N
         labeldokter2.setPreferredSize(new java.awt.Dimension(150, 50));
         jPanel7.add(labeldokter2);
@@ -335,11 +477,11 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
         form3.setLayout(new java.awt.BorderLayout());
 
         labelantri3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "No.Antrian :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
-        labelantri3.setForeground(new java.awt.Color(50, 100, 50));
+        labelantri3.setForeground(new java.awt.Color(0, 0, 0));
         labelantri3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelantri3.setText("003");
+        labelantri3.setText("000");
         labelantri3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        labelantri3.setFont(new java.awt.Font("Serif", 0, 86)); // NOI18N
+        labelantri3.setFont(new java.awt.Font("Serif", 1, 100)); // NOI18N
         labelantri3.setName("labelantri3"); // NOI18N
         labelantri3.setPreferredSize(new java.awt.Dimension(200, 50));
         form3.add(labelantri3, java.awt.BorderLayout.EAST);
@@ -349,21 +491,21 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
         jPanel8.setLayout(new java.awt.GridLayout(2, 0));
 
         labelpas3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "Pasien :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
-        labelpas3.setForeground(new java.awt.Color(50, 100, 50));
+        labelpas3.setForeground(new java.awt.Color(0, 0, 0));
         labelpas3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labelpas3.setText("Pasien 3");
         labelpas3.setFocusable(false);
-        labelpas3.setFont(new java.awt.Font("Serif", 0, 26)); // NOI18N
+        labelpas3.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         labelpas3.setName("labelpas3"); // NOI18N
         labelpas3.setPreferredSize(new java.awt.Dimension(150, 50));
         jPanel8.add(labelpas3);
 
         labeldokter3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "Dokter :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
-        labeldokter3.setForeground(new java.awt.Color(50, 100, 50));
+        labeldokter3.setForeground(new java.awt.Color(0, 0, 0));
         labeldokter3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labeldokter3.setText("Dokter 3");
         labeldokter3.setFocusable(false);
-        labeldokter3.setFont(new java.awt.Font("Serif", 0, 26)); // NOI18N
+        labeldokter3.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         labeldokter3.setName("labeldokter3"); // NOI18N
         labeldokter3.setPreferredSize(new java.awt.Dimension(150, 50));
         jPanel8.add(labeldokter3);
@@ -372,41 +514,148 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
 
         jPanel5.add(form3);
 
-        DlgDisplay.getContentPane().add(jPanel5, java.awt.BorderLayout.EAST);
+        form4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(100, 200, 100)), " Antrian Pasien 4", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 0, 38), new java.awt.Color(50, 100, 50))); // NOI18N
+        form4.setName("form4"); // NOI18N
+        form4.setPreferredSize(new java.awt.Dimension(500, 110));
+        form4.setWarnaAtas(new java.awt.Color(255, 255, 255));
+        form4.setWarnaBawah(new java.awt.Color(230, 255, 230));
+        form4.setLayout(new java.awt.BorderLayout());
 
-        internalFrame5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(100, 200, 100)), "::[ Informasi ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 0, 24), new java.awt.Color(50, 100, 50))); // NOI18N
-        internalFrame5.setComponentPopupMenu(Popup4);
-        internalFrame5.setName("internalFrame5"); // NOI18N
-        internalFrame5.setPreferredSize(new java.awt.Dimension(500, 110));
-        internalFrame5.setWarnaAtas(new java.awt.Color(255, 255, 255));
-        internalFrame5.setWarnaBawah(new java.awt.Color(230, 255, 230));
-        internalFrame5.setLayout(new java.awt.BorderLayout());
+        labelantri4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "No.Antrian :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
+        labelantri4.setForeground(new java.awt.Color(0, 0, 0));
+        labelantri4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelantri4.setText("000");
+        labelantri4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        labelantri4.setFont(new java.awt.Font("Serif", 1, 100)); // NOI18N
+        labelantri4.setName("labelantri4"); // NOI18N
+        labelantri4.setPreferredSize(new java.awt.Dimension(200, 50));
+        form4.add(labelantri4, java.awt.BorderLayout.EAST);
+        labelantri4.getAccessibleContext().setAccessibleName("004");
 
-        paneliklan.setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/picture/coba.gif"))); // NOI18N
-        paneliklan.setBackgroundImageType(usu.widget.constan.BackgroundConstan.BACKGROUND_IMAGE_STRECT);
-        paneliklan.setPreferredSize(new java.awt.Dimension(200, 140));
-        paneliklan.setRound(false);
-        paneliklan.setWarna(new java.awt.Color(150, 255, 150));
-        paneliklan.setLayout(null);
-        internalFrame5.add(paneliklan, java.awt.BorderLayout.CENTER);
+        jPanel9.setName("jPanel9"); // NOI18N
+        jPanel9.setOpaque(false);
+        jPanel9.setLayout(new java.awt.GridLayout(2, 0));
 
-        panelruntext.setBackground(new java.awt.Color(230, 255, 230));
-        panelruntext.setName("panelruntext"); // NOI18N
-        panelruntext.setPreferredSize(new java.awt.Dimension(100, 100));
-        panelruntext.setLayout(new java.awt.BorderLayout());
+        labelpas4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "Pasien :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
+        labelpas4.setForeground(new java.awt.Color(0, 0, 0));
+        labelpas4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelpas4.setText("Pasien 1");
+        labelpas4.setFocusable(false);
+        labelpas4.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
+        labelpas4.setName("labelpas4"); // NOI18N
+        labelpas4.setPreferredSize(new java.awt.Dimension(150, 50));
+        jPanel9.add(labelpas4);
 
-        labelruntext.setBackground(new java.awt.Color(238, 255, 238));
-        labelruntext.setForeground(new java.awt.Color(50, 100, 50));
-        labelruntext.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        labelruntext.setText("Aku sayang sama kamu, maafin aku yaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-        labelruntext.setFont(new java.awt.Font("Serif", 0, 26)); // NOI18N
-        labelruntext.setName("labelruntext"); // NOI18N
-        labelruntext.setPreferredSize(new java.awt.Dimension(853, 50));
-        panelruntext.add(labelruntext, java.awt.BorderLayout.CENTER);
+        labeldokter4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "Dokter :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
+        labeldokter4.setForeground(new java.awt.Color(0, 0, 0));
+        labeldokter4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labeldokter4.setText("Dokter 1");
+        labeldokter4.setFocusable(false);
+        labeldokter4.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
+        labeldokter4.setName("labeldokter4"); // NOI18N
+        labeldokter4.setPreferredSize(new java.awt.Dimension(150, 50));
+        jPanel9.add(labeldokter4);
 
-        internalFrame5.add(panelruntext, java.awt.BorderLayout.PAGE_END);
+        form4.add(jPanel9, java.awt.BorderLayout.CENTER);
 
-        DlgDisplay.getContentPane().add(internalFrame5, java.awt.BorderLayout.CENTER);
+        jPanel5.add(form4);
+        form4.getAccessibleContext().setAccessibleName(" Antrian Pasien 4");
+
+        form5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(100, 200, 100)), " Antrian Pasien 5", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 0, 38), new java.awt.Color(50, 100, 50))); // NOI18N
+        form5.setName("form5"); // NOI18N
+        form5.setPreferredSize(new java.awt.Dimension(500, 110));
+        form5.setWarnaAtas(new java.awt.Color(255, 255, 255));
+        form5.setWarnaBawah(new java.awt.Color(230, 255, 230));
+        form5.setLayout(new java.awt.BorderLayout());
+
+        labelantri5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "No.Antrian :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
+        labelantri5.setForeground(new java.awt.Color(0, 0, 0));
+        labelantri5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelantri5.setText("000");
+        labelantri5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        labelantri5.setFont(new java.awt.Font("Serif", 1, 100)); // NOI18N
+        labelantri5.setName("labelantri5"); // NOI18N
+        labelantri5.setPreferredSize(new java.awt.Dimension(200, 50));
+        form5.add(labelantri5, java.awt.BorderLayout.EAST);
+        labelantri5.getAccessibleContext().setAccessibleName("005");
+
+        jPanel10.setName("jPanel10"); // NOI18N
+        jPanel10.setOpaque(false);
+        jPanel10.setLayout(new java.awt.GridLayout(2, 0));
+
+        labelpas5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "Pasien :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
+        labelpas5.setForeground(new java.awt.Color(0, 0, 0));
+        labelpas5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelpas5.setText("Pasien 1");
+        labelpas5.setFocusable(false);
+        labelpas5.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
+        labelpas5.setName("labelpas5"); // NOI18N
+        labelpas5.setPreferredSize(new java.awt.Dimension(150, 50));
+        jPanel10.add(labelpas5);
+
+        labeldokter5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "Dokter :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
+        labeldokter5.setForeground(new java.awt.Color(0, 0, 0));
+        labeldokter5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labeldokter5.setText("Dokter 1");
+        labeldokter5.setFocusable(false);
+        labeldokter5.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
+        labeldokter5.setName("labeldokter5"); // NOI18N
+        labeldokter5.setPreferredSize(new java.awt.Dimension(150, 50));
+        jPanel10.add(labeldokter5);
+
+        form5.add(jPanel10, java.awt.BorderLayout.CENTER);
+
+        jPanel5.add(form5);
+        form5.getAccessibleContext().setAccessibleName(" Antrian Pasien 5");
+
+        form6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(100, 200, 100)), " Antrian Pasien 6", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 0, 38), new java.awt.Color(50, 100, 50))); // NOI18N
+        form6.setName("form6"); // NOI18N
+        form6.setPreferredSize(new java.awt.Dimension(500, 110));
+        form6.setWarnaAtas(new java.awt.Color(255, 255, 255));
+        form6.setWarnaBawah(new java.awt.Color(230, 255, 230));
+        form6.setLayout(new java.awt.BorderLayout());
+
+        labelantri6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "No.Antrian :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
+        labelantri6.setForeground(new java.awt.Color(0, 0, 0));
+        labelantri6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelantri6.setText("000");
+        labelantri6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        labelantri6.setFont(new java.awt.Font("Serif", 1, 100)); // NOI18N
+        labelantri6.setName("labelantri6"); // NOI18N
+        labelantri6.setPreferredSize(new java.awt.Dimension(200, 50));
+        form6.add(labelantri6, java.awt.BorderLayout.EAST);
+        labelantri6.getAccessibleContext().setAccessibleName("006");
+
+        jPanel11.setName("jPanel11"); // NOI18N
+        jPanel11.setOpaque(false);
+        jPanel11.setLayout(new java.awt.GridLayout(2, 0));
+
+        labelpas6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "Pasien :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
+        labelpas6.setForeground(new java.awt.Color(0, 0, 0));
+        labelpas6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelpas6.setText("Pasien 1");
+        labelpas6.setFocusable(false);
+        labelpas6.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
+        labelpas6.setName("labelpas6"); // NOI18N
+        labelpas6.setPreferredSize(new java.awt.Dimension(150, 50));
+        jPanel11.add(labelpas6);
+
+        labeldokter6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(150, 250, 150)), "Dokter :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 0, 26), new java.awt.Color(50, 100, 50))); // NOI18N
+        labeldokter6.setForeground(new java.awt.Color(0, 0, 0));
+        labeldokter6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labeldokter6.setText("Dokter 1");
+        labeldokter6.setFocusable(false);
+        labeldokter6.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
+        labeldokter6.setName("labeldokter6"); // NOI18N
+        labeldokter6.setPreferredSize(new java.awt.Dimension(150, 50));
+        jPanel11.add(labeldokter6);
+
+        form6.add(jPanel11, java.awt.BorderLayout.CENTER);
+
+        jPanel5.add(form6);
+        form6.getAccessibleContext().setAccessibleName(" Antrian Pasien 6");
+
+        DlgDisplay.getContentPane().add(jPanel5, java.awt.BorderLayout.CENTER);
 
         Popup1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         Popup1.setName("Popup1"); // NOI18N
@@ -550,6 +799,129 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
         norawat3.setPreferredSize(new java.awt.Dimension(230, 23));
         norawat3.setSelectionColor(new java.awt.Color(255, 255, 255));
 
+        Popup5.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        Popup5.setName("Popup5"); // NOI18N
+
+        ppAntri4.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        ppAntri4.setForeground(new java.awt.Color(102, 51, 0));
+        ppAntri4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/011.png"))); // NOI18N
+        ppAntri4.setText("Masukkan Antrian");
+        ppAntri4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ppAntri4.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        ppAntri4.setIconTextGap(8);
+        ppAntri4.setName("ppAntri4"); // NOI18N
+        ppAntri4.setPreferredSize(new java.awt.Dimension(150, 25));
+        ppAntri4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ppAntri4ActionPerformed(evt);
+            }
+        });
+        Popup5.add(ppAntri4);
+
+        ppUndo4.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        ppUndo4.setForeground(new java.awt.Color(102, 51, 0));
+        ppUndo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/101.png"))); // NOI18N
+        ppUndo4.setText("Batal Periksa");
+        ppUndo4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ppUndo4.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        ppUndo4.setIconTextGap(8);
+        ppUndo4.setName("ppUndo4"); // NOI18N
+        ppUndo4.setPreferredSize(new java.awt.Dimension(150, 25));
+        ppUndo4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ppUndo4ActionPerformed(evt);
+            }
+        });
+        Popup5.add(ppUndo4);
+
+        Popup6.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        Popup6.setName("Popup6"); // NOI18N
+
+        ppAntri5.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        ppAntri5.setForeground(new java.awt.Color(102, 51, 0));
+        ppAntri5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/011.png"))); // NOI18N
+        ppAntri5.setText("Masukkan Antrian");
+        ppAntri5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ppAntri5.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        ppAntri5.setIconTextGap(8);
+        ppAntri5.setName("ppAntri5"); // NOI18N
+        ppAntri5.setPreferredSize(new java.awt.Dimension(150, 25));
+        ppAntri5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ppAntri5ActionPerformed(evt);
+            }
+        });
+        Popup6.add(ppAntri5);
+
+        ppUndo5.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        ppUndo5.setForeground(new java.awt.Color(102, 51, 0));
+        ppUndo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/101.png"))); // NOI18N
+        ppUndo5.setText("Batal Periksa");
+        ppUndo5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ppUndo5.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        ppUndo5.setIconTextGap(8);
+        ppUndo5.setName("ppUndo5"); // NOI18N
+        ppUndo5.setPreferredSize(new java.awt.Dimension(150, 25));
+        ppUndo5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ppUndo5ActionPerformed(evt);
+            }
+        });
+        Popup6.add(ppUndo5);
+
+        Popup7.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        Popup7.setName("Popup7"); // NOI18N
+
+        ppAntri6.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        ppAntri6.setForeground(new java.awt.Color(102, 51, 0));
+        ppAntri6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/011.png"))); // NOI18N
+        ppAntri6.setText("Masukkan Antrian");
+        ppAntri6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ppAntri6.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        ppAntri6.setIconTextGap(8);
+        ppAntri6.setName("ppAntri6"); // NOI18N
+        ppAntri6.setPreferredSize(new java.awt.Dimension(150, 25));
+        ppAntri6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ppAntri6ActionPerformed(evt);
+            }
+        });
+        Popup7.add(ppAntri6);
+
+        ppUndo6.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        ppUndo6.setForeground(new java.awt.Color(102, 51, 0));
+        ppUndo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/101.png"))); // NOI18N
+        ppUndo6.setText("Batal Periksa");
+        ppUndo6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ppUndo6.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        ppUndo6.setIconTextGap(8);
+        ppUndo6.setName("ppUndo6"); // NOI18N
+        ppUndo6.setPreferredSize(new java.awt.Dimension(150, 25));
+        ppUndo6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ppUndo6ActionPerformed(evt);
+            }
+        });
+        Popup7.add(ppUndo6);
+
+        norawat4.setEditable(false);
+        norawat4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        norawat4.setName("norawat4"); // NOI18N
+        norawat4.setPreferredSize(new java.awt.Dimension(230, 23));
+        norawat4.setSelectionColor(new java.awt.Color(255, 255, 255));
+
+        norawat5.setEditable(false);
+        norawat5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        norawat5.setName("norawat5"); // NOI18N
+        norawat5.setPreferredSize(new java.awt.Dimension(230, 23));
+        norawat5.setSelectionColor(new java.awt.Color(255, 255, 255));
+
+        norawat6.setEditable(false);
+        norawat6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        norawat6.setName("norawat6"); // NOI18N
+        norawat6.setPreferredSize(new java.awt.Dimension(230, 23));
+        norawat6.setSelectionColor(new java.awt.Color(255, 255, 255));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -604,7 +976,7 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
 
         jPanel1.setName("jPanel1"); // NOI18N
         jPanel1.setOpaque(false);
-        jPanel1.setLayout(new java.awt.GridLayout(1, 3));
+        jPanel1.setLayout(new java.awt.GridLayout(2, 3));
 
         jPanel2.setBackground(new java.awt.Color(245, 180, 245));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), ".: Antrian Pasien 1 :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 70, 40))); // NOI18N
@@ -746,6 +1118,11 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
         Unit2.setName("Unit2"); // NOI18N
         Unit2.setPreferredSize(new java.awt.Dimension(230, 23));
         Unit2.setSelectionColor(new java.awt.Color(255, 255, 255));
+        Unit2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Unit2ActionPerformed(evt);
+            }
+        });
         panelisi3.add(Unit2);
         Unit2.setBounds(39, 10, 230, 23);
 
@@ -945,6 +1322,347 @@ public class DlgAntrian extends javax.swing.JDialog implements ActionListener{
 
         jPanel1.add(jPanel4);
 
+        jPanel12.setBackground(new java.awt.Color(245, 180, 245));
+        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), ".: Antrian Pasien 4 :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 70, 40))); // NOI18N
+        jPanel12.setName("jPanel12"); // NOI18N
+        jPanel12.setOpaque(false);
+        jPanel12.setLayout(new java.awt.BorderLayout(1, 1));
+
+        panelisi8.setName("panelisi8"); // NOI18N
+        panelisi8.setPreferredSize(new java.awt.Dimension(12, 74));
+        panelisi8.setLayout(null);
+
+        BtnSeek8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
+        BtnSeek8.setMnemonic('1');
+        BtnSeek8.setToolTipText("ALt+1");
+        BtnSeek8.setName("BtnSeek8"); // NOI18N
+        BtnSeek8.setPreferredSize(new java.awt.Dimension(28, 23));
+        BtnSeek8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSeek8ActionPerformed(evt);
+            }
+        });
+        panelisi8.add(BtnSeek8);
+        BtnSeek8.setBounds(6, 10, 28, 23);
+
+        Unit4.setEditable(false);
+        Unit4.setName("Unit4"); // NOI18N
+        Unit4.setPreferredSize(new java.awt.Dimension(230, 23));
+        Unit4.setSelectionColor(new java.awt.Color(255, 255, 255));
+        panelisi8.add(Unit4);
+        Unit4.setBounds(39, 10, 230, 23);
+
+        BtnSeek9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
+        BtnSeek9.setMnemonic('2');
+        BtnSeek9.setToolTipText("ALt+2");
+        BtnSeek9.setName("BtnSeek9"); // NOI18N
+        BtnSeek9.setPreferredSize(new java.awt.Dimension(28, 23));
+        BtnSeek9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSeek9ActionPerformed(evt);
+            }
+        });
+        panelisi8.add(BtnSeek9);
+        BtnSeek9.setBounds(6, 42, 28, 23);
+
+        Dokter4.setEditable(false);
+        Dokter4.setName("Dokter4"); // NOI18N
+        Dokter4.setPreferredSize(new java.awt.Dimension(230, 23));
+        Dokter4.setSelectionColor(new java.awt.Color(255, 255, 255));
+        panelisi8.add(Dokter4);
+        Dokter4.setBounds(39, 42, 230, 23);
+
+        jPanel12.add(panelisi8, java.awt.BorderLayout.PAGE_START);
+
+        Scroll3.setComponentPopupMenu(Popup1);
+        Scroll3.setName("Scroll3"); // NOI18N
+        Scroll3.setOpaque(true);
+
+        Table4.setToolTipText("Silahkan klik untuk memilih data yang mau diedit ataupun dihapus");
+        Table4.setComponentPopupMenu(Popup1);
+        Table4.setName("Table4"); // NOI18N
+        Scroll3.setViewportView(Table4);
+
+        jPanel12.add(Scroll3, java.awt.BorderLayout.CENTER);
+
+        panelisi9.setName("panelisi9"); // NOI18N
+        panelisi9.setPreferredSize(new java.awt.Dimension(12, 44));
+        panelisi9.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        BtnAntri4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Agenda-1-16x16.png"))); // NOI18N
+        BtnAntri4.setMnemonic('7');
+        BtnAntri4.setText("Antri");
+        BtnAntri4.setToolTipText("Alt+7");
+        BtnAntri4.setIconTextGap(3);
+        BtnAntri4.setName("BtnAntri4"); // NOI18N
+        BtnAntri4.setPreferredSize(new java.awt.Dimension(90, 30));
+        BtnAntri4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAntri4ActionPerformed(evt);
+            }
+        });
+        panelisi9.add(BtnAntri4);
+
+        BtnBatal7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/cross.png"))); // NOI18N
+        BtnBatal7.setMnemonic('8');
+        BtnBatal7.setText("Batal");
+        BtnBatal7.setToolTipText("Alt+8");
+        BtnBatal7.setIconTextGap(3);
+        BtnBatal7.setName("BtnBatal7"); // NOI18N
+        BtnBatal7.setPreferredSize(new java.awt.Dimension(90, 30));
+        BtnBatal7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBatal7ActionPerformed(evt);
+            }
+        });
+        panelisi9.add(BtnBatal7);
+
+        BtnBatal8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/plus_16.png"))); // NOI18N
+        BtnBatal8.setMnemonic('8');
+        BtnBatal8.setText("Ulang");
+        BtnBatal8.setToolTipText("Alt+8");
+        BtnBatal8.setIconTextGap(3);
+        BtnBatal8.setName("BtnBatal8"); // NOI18N
+        BtnBatal8.setPreferredSize(new java.awt.Dimension(90, 30));
+        BtnBatal8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBatal8ActionPerformed(evt);
+            }
+        });
+        panelisi9.add(BtnBatal8);
+
+        jPanel12.add(panelisi9, java.awt.BorderLayout.PAGE_END);
+
+        jPanel1.add(jPanel12);
+
+        jPanel13.setBackground(new java.awt.Color(245, 180, 245));
+        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), ".: Antrian Pasien 5 :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 70, 40))); // NOI18N
+        jPanel13.setName("jPanel13"); // NOI18N
+        jPanel13.setOpaque(false);
+        jPanel13.setLayout(new java.awt.BorderLayout(1, 1));
+
+        panelisi10.setName("panelisi10"); // NOI18N
+        panelisi10.setPreferredSize(new java.awt.Dimension(12, 74));
+        panelisi10.setLayout(null);
+
+        BtnSeek10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
+        BtnSeek10.setMnemonic('1');
+        BtnSeek10.setToolTipText("ALt+1");
+        BtnSeek10.setName("BtnSeek10"); // NOI18N
+        BtnSeek10.setPreferredSize(new java.awt.Dimension(28, 23));
+        BtnSeek10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSeek10ActionPerformed(evt);
+            }
+        });
+        panelisi10.add(BtnSeek10);
+        BtnSeek10.setBounds(6, 10, 28, 23);
+
+        Unit5.setEditable(false);
+        Unit5.setName("Unit5"); // NOI18N
+        Unit5.setPreferredSize(new java.awt.Dimension(230, 23));
+        Unit5.setSelectionColor(new java.awt.Color(255, 255, 255));
+        panelisi10.add(Unit5);
+        Unit5.setBounds(39, 10, 230, 23);
+
+        BtnSeek11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
+        BtnSeek11.setMnemonic('2');
+        BtnSeek11.setToolTipText("ALt+2");
+        BtnSeek11.setName("BtnSeek11"); // NOI18N
+        BtnSeek11.setPreferredSize(new java.awt.Dimension(28, 23));
+        BtnSeek11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSeek11ActionPerformed(evt);
+            }
+        });
+        panelisi10.add(BtnSeek11);
+        BtnSeek11.setBounds(6, 42, 28, 23);
+
+        Dokter5.setEditable(false);
+        Dokter5.setName("Dokter5"); // NOI18N
+        Dokter5.setPreferredSize(new java.awt.Dimension(230, 23));
+        Dokter5.setSelectionColor(new java.awt.Color(255, 255, 255));
+        panelisi10.add(Dokter5);
+        Dokter5.setBounds(39, 42, 230, 23);
+
+        jPanel13.add(panelisi10, java.awt.BorderLayout.PAGE_START);
+
+        Scroll4.setComponentPopupMenu(Popup1);
+        Scroll4.setName("Scroll4"); // NOI18N
+        Scroll4.setOpaque(true);
+
+        Table5.setToolTipText("Silahkan klik untuk memilih data yang mau diedit ataupun dihapus");
+        Table5.setComponentPopupMenu(Popup1);
+        Table5.setName("Table5"); // NOI18N
+        Scroll4.setViewportView(Table5);
+
+        jPanel13.add(Scroll4, java.awt.BorderLayout.CENTER);
+
+        panelisi11.setName("panelisi11"); // NOI18N
+        panelisi11.setPreferredSize(new java.awt.Dimension(12, 44));
+        panelisi11.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        BtnAntri5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Agenda-1-16x16.png"))); // NOI18N
+        BtnAntri5.setMnemonic('7');
+        BtnAntri5.setText("Antri");
+        BtnAntri5.setToolTipText("Alt+7");
+        BtnAntri5.setIconTextGap(3);
+        BtnAntri5.setName("BtnAntri5"); // NOI18N
+        BtnAntri5.setPreferredSize(new java.awt.Dimension(90, 30));
+        BtnAntri5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAntri5ActionPerformed(evt);
+            }
+        });
+        panelisi11.add(BtnAntri5);
+
+        BtnBatal9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/cross.png"))); // NOI18N
+        BtnBatal9.setMnemonic('8');
+        BtnBatal9.setText("Batal");
+        BtnBatal9.setToolTipText("Alt+8");
+        BtnBatal9.setIconTextGap(3);
+        BtnBatal9.setName("BtnBatal9"); // NOI18N
+        BtnBatal9.setPreferredSize(new java.awt.Dimension(90, 30));
+        BtnBatal9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBatal9ActionPerformed(evt);
+            }
+        });
+        panelisi11.add(BtnBatal9);
+
+        BtnBatal10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/plus_16.png"))); // NOI18N
+        BtnBatal10.setMnemonic('8');
+        BtnBatal10.setText("Ulang");
+        BtnBatal10.setToolTipText("Alt+8");
+        BtnBatal10.setIconTextGap(3);
+        BtnBatal10.setName("BtnBatal10"); // NOI18N
+        BtnBatal10.setPreferredSize(new java.awt.Dimension(90, 30));
+        BtnBatal10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBatal10ActionPerformed(evt);
+            }
+        });
+        panelisi11.add(BtnBatal10);
+
+        jPanel13.add(panelisi11, java.awt.BorderLayout.PAGE_END);
+
+        jPanel1.add(jPanel13);
+        jPanel13.getAccessibleContext().setAccessibleName(".: Antrian Pasien 5  :");
+
+        jPanel14.setBackground(new java.awt.Color(245, 180, 245));
+        jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), ".: Antrian Pasien 6 :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 70, 40))); // NOI18N
+        jPanel14.setName("jPanel14"); // NOI18N
+        jPanel14.setOpaque(false);
+        jPanel14.setLayout(new java.awt.BorderLayout(1, 1));
+
+        panelisi12.setName("panelisi12"); // NOI18N
+        panelisi12.setPreferredSize(new java.awt.Dimension(12, 74));
+        panelisi12.setLayout(null);
+
+        BtnSeek12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
+        BtnSeek12.setMnemonic('1');
+        BtnSeek12.setToolTipText("ALt+1");
+        BtnSeek12.setName("BtnSeek12"); // NOI18N
+        BtnSeek12.setPreferredSize(new java.awt.Dimension(28, 23));
+        BtnSeek12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSeek12ActionPerformed(evt);
+            }
+        });
+        panelisi12.add(BtnSeek12);
+        BtnSeek12.setBounds(6, 10, 28, 23);
+
+        Unit6.setEditable(false);
+        Unit6.setName("Unit6"); // NOI18N
+        Unit6.setPreferredSize(new java.awt.Dimension(230, 23));
+        Unit6.setSelectionColor(new java.awt.Color(255, 255, 255));
+        panelisi12.add(Unit6);
+        Unit6.setBounds(39, 10, 230, 23);
+
+        BtnSeek13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
+        BtnSeek13.setMnemonic('2');
+        BtnSeek13.setToolTipText("ALt+2");
+        BtnSeek13.setName("BtnSeek13"); // NOI18N
+        BtnSeek13.setPreferredSize(new java.awt.Dimension(28, 23));
+        BtnSeek13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSeek13ActionPerformed(evt);
+            }
+        });
+        panelisi12.add(BtnSeek13);
+        BtnSeek13.setBounds(6, 42, 28, 23);
+
+        Dokter6.setEditable(false);
+        Dokter6.setName("Dokter6"); // NOI18N
+        Dokter6.setPreferredSize(new java.awt.Dimension(230, 23));
+        Dokter6.setSelectionColor(new java.awt.Color(255, 255, 255));
+        panelisi12.add(Dokter6);
+        Dokter6.setBounds(39, 42, 230, 23);
+
+        jPanel14.add(panelisi12, java.awt.BorderLayout.PAGE_START);
+
+        Scroll5.setComponentPopupMenu(Popup1);
+        Scroll5.setName("Scroll5"); // NOI18N
+        Scroll5.setOpaque(true);
+
+        Table6.setToolTipText("Silahkan klik untuk memilih data yang mau diedit ataupun dihapus");
+        Table6.setComponentPopupMenu(Popup1);
+        Table6.setName("Table6"); // NOI18N
+        Scroll5.setViewportView(Table6);
+
+        jPanel14.add(Scroll5, java.awt.BorderLayout.CENTER);
+
+        panelisi13.setName("panelisi13"); // NOI18N
+        panelisi13.setPreferredSize(new java.awt.Dimension(12, 44));
+        panelisi13.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        BtnAntri6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Agenda-1-16x16.png"))); // NOI18N
+        BtnAntri6.setMnemonic('7');
+        BtnAntri6.setText("Antri");
+        BtnAntri6.setToolTipText("Alt+7");
+        BtnAntri6.setIconTextGap(3);
+        BtnAntri6.setName("BtnAntri6"); // NOI18N
+        BtnAntri6.setPreferredSize(new java.awt.Dimension(90, 30));
+        BtnAntri6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAntri6ActionPerformed(evt);
+            }
+        });
+        panelisi13.add(BtnAntri6);
+
+        BtnBatal11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/cross.png"))); // NOI18N
+        BtnBatal11.setMnemonic('8');
+        BtnBatal11.setText("Batal");
+        BtnBatal11.setToolTipText("Alt+8");
+        BtnBatal11.setIconTextGap(3);
+        BtnBatal11.setName("BtnBatal11"); // NOI18N
+        BtnBatal11.setPreferredSize(new java.awt.Dimension(90, 30));
+        BtnBatal11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBatal11ActionPerformed(evt);
+            }
+        });
+        panelisi13.add(BtnBatal11);
+
+        BtnBatal12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/plus_16.png"))); // NOI18N
+        BtnBatal12.setMnemonic('8');
+        BtnBatal12.setText("Ulang");
+        BtnBatal12.setToolTipText("Alt+8");
+        BtnBatal12.setIconTextGap(3);
+        BtnBatal12.setName("BtnBatal12"); // NOI18N
+        BtnBatal12.setPreferredSize(new java.awt.Dimension(90, 30));
+        BtnBatal12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBatal12ActionPerformed(evt);
+            }
+        });
+        panelisi13.add(BtnBatal12);
+
+        jPanel14.add(panelisi13, java.awt.BorderLayout.PAGE_END);
+
+        jPanel1.add(jPanel14);
+        jPanel14.getAccessibleContext().setAccessibleName(".: Antrian Pasien 6 :");
+
         internalFrame1.add(jPanel1, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(internalFrame1, java.awt.BorderLayout.CENTER);
@@ -998,6 +1716,18 @@ private void BtnDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
        if(!Unit3.getText().equals("")){
            form3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(100, 200, 100)), Unit3.getText()+" :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 0, 36), new java.awt.Color(100, 150, 100)));
        }
+       
+        if(!Unit4.getText().equals("")){
+            form4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(100, 200, 100)), Unit4.getText()+" :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 0, 36), new java.awt.Color(100, 150, 100)));
+       }
+              
+        if(!Unit5.getText().equals("")){
+           form5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(100, 200, 100)), Unit5.getText()+" :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 0, 36), new java.awt.Color(100, 150, 100)));
+       }
+                     
+        if(!Unit6.getText().equals("")){
+           form6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(100, 200, 100)), Unit6.getText()+" :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 0, 36), new java.awt.Color(100, 150, 100)));
+       }
        isTampil();
        DlgDisplay.setIconImage(new ImageIcon(super.getClass().getResource("/picture/addressbook-edit24.png")).getImage());
        DlgDisplay.setAlwaysOnTop(false);
@@ -1016,10 +1746,18 @@ private void ppAntri1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 System.out.println(ex);
             } 
             panggil(Integer.parseInt(tabMode1.getValueAt(0,0).toString()));
+            panggilpoli(Unit1.getText());
                 labelantri1.setText(tabMode1.getValueAt(0,0).toString());
                 labelpas1.setText(tabMode1.getValueAt(0,2).toString());
                 norawat1.setText(tabMode1.getValueAt(0,3).toString());
                 labeldokter1.setText(tabMode1.getValueAt(0,4).toString());
+//                
+//                System.out.println(Integer.parseInt(tabMode1.getValueAt(0,0).toString()));
+//                System.out.println(labelantri1.getText());
+//                System.out.println(labelpas1.getText());
+//                System.out.println(norawat1.getText());
+//                System.out.println(labeldokter1.getText());
+                
                 Sequel.queryu("update reg_periksa set stts='Sudah' where no_rawat='"+tabMode1.getValueAt(0,3).toString()+"'");
                 tampil1();
         }
@@ -1037,6 +1775,7 @@ private void ppAntri2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 System.out.println(ex);
             } 
             panggil(Integer.parseInt(tabMode2.getValueAt(0,0).toString()));
+            panggilpoli(Unit2.getText());
                 labelantri2.setText(tabMode2.getValueAt(0,0).toString());
                 labelpas2.setText(tabMode2.getValueAt(0,2).toString());
                 norawat2.setText(tabMode2.getValueAt(0,3).toString());
@@ -1058,11 +1797,12 @@ private void ppAntri3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 System.out.println(ex);
             } 
             panggil(Integer.parseInt(tabMode3.getValueAt(0,0).toString()));
+            panggilpoli(Unit3.getText());
                 labelantri3.setText(tabMode3.getValueAt(0,0).toString());
                 labelpas3.setText(tabMode3.getValueAt(0,2).toString());
                 norawat3.setText(tabMode3.getValueAt(0,3).toString());
                 labeldokter3.setText(tabMode3.getValueAt(0,4).toString());
-                Sequel.queryu("update reg_periksa set stts='Sudah' where no_rawat='"+tabMode3.getValueAt(1,3).toString()+"'");
+                Sequel.queryu("update reg_periksa set stts='Sudah' where no_rawat='"+tabMode3.getValueAt(0,3).toString()+"'");
                 tampil3();
         }
 }//GEN-LAST:event_ppAntri3ActionPerformed
@@ -1206,6 +1946,18 @@ private void BtnBatal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                         Unit3.setText(poli.getTable().getValueAt(poli.getTable().getSelectedRow(),1).toString());
                         tampil3();
                         Unit3.requestFocus();
+                    }else if(pilihan==4){
+                        Unit4.setText(poli.getTable().getValueAt(poli.getTable().getSelectedRow(),1).toString());
+                        tampil4();
+                        Unit4.requestFocus();
+                    }else if(pilihan==5){
+                        Unit5.setText(poli.getTable().getValueAt(poli.getTable().getSelectedRow(),1).toString());
+                        tampil5();
+                        Unit5.requestFocus();
+                    }else if(pilihan==6){
+                        Unit6.setText(poli.getTable().getValueAt(poli.getTable().getSelectedRow(),1).toString());
+                        tampil6();
+                        Unit6.requestFocus();
                     }  
                 }                
             }
@@ -1239,6 +1991,18 @@ private void BtnBatal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                         Dokter3.setText(dokter.getTable().getValueAt(dokter.getTable().getSelectedRow(),1).toString());
                         tampil3();
                         Dokter3.requestFocus();
+                    }else if(pilihan==4){
+                        Dokter4.setText(dokter.getTable().getValueAt(dokter.getTable().getSelectedRow(),1).toString());
+                        tampil4();
+                        Dokter4.requestFocus();
+                    }else if(pilihan==5){
+                        Dokter5.setText(dokter.getTable().getValueAt(dokter.getTable().getSelectedRow(),1).toString());
+                        tampil5();
+                        Dokter5.requestFocus();
+                    }else if(pilihan==6){
+                        Dokter6.setText(dokter.getTable().getValueAt(dokter.getTable().getSelectedRow(),1).toString());
+                        tampil6();
+                        Dokter6.requestFocus();
                     }
                 }                
             }
@@ -1264,6 +2028,9 @@ private void BtnBatal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
         tampil1();
         tampil2();
         tampil3();
+        tampil4();
+        tampil5();
+        tampil6();
     }//GEN-LAST:event_formWindowOpened
 
     private void BtnBatal4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBatal4ActionPerformed
@@ -1277,6 +2044,7 @@ private void BtnBatal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                 System.out.println(ex);
             } 
             panggil(Integer.parseInt(labelantri1.getText()));
+            panggilpoli(Unit1.getText());
         }            
     }//GEN-LAST:event_BtnBatal4ActionPerformed
 
@@ -1291,6 +2059,7 @@ private void BtnBatal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                 System.out.println(ex);
             } 
             panggil(Integer.parseInt(labelantri2.getText()));
+            panggilpoli(Unit2.getText());
         }
     }//GEN-LAST:event_BtnBatal5ActionPerformed
 
@@ -1305,8 +2074,259 @@ private void BtnBatal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                 System.out.println(ex);
             } 
             panggil(Integer.parseInt(labelantri3.getText()));
+            panggilpoli(Unit3.getText());
         }
     }//GEN-LAST:event_BtnBatal6ActionPerformed
+
+    private void BtnSeek8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSeek8ActionPerformed
+        pilihan=4;
+        poli.emptTeks();
+        poli.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+        poli.setLocationRelativeTo(internalFrame1);
+        poli.setAlwaysOnTop(false);
+        poli.setVisible(true);
+    }//GEN-LAST:event_BtnSeek8ActionPerformed
+
+    private void BtnSeek9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSeek9ActionPerformed
+        pilihan=4;
+        dokter.emptTeks();
+        dokter.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+        dokter.setLocationRelativeTo(internalFrame1);
+        dokter.setAlwaysOnTop(false);
+        dokter.setVisible(true);
+    }//GEN-LAST:event_BtnSeek9ActionPerformed
+
+    private void BtnAntri4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAntri4ActionPerformed
+        ppAntri4ActionPerformed(evt);
+    }//GEN-LAST:event_BtnAntri4ActionPerformed
+
+    private void BtnBatal7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBatal7ActionPerformed
+        ppUndo4ActionPerformed(evt);
+    }//GEN-LAST:event_BtnBatal7ActionPerformed
+
+    private void BtnBatal8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBatal8ActionPerformed
+        if(!labelantri4.getText().equals("")){
+            try {
+                BackgroundMusic bm = new BackgroundMusic("./suara/nomor-urut.mp3");
+                bm.start();
+                Thread.sleep(2000);
+                bm.stop();
+            } catch (InterruptedException ex) {
+                System.out.println(ex);
+            } 
+            panggil(Integer.parseInt(labelantri4.getText()));
+            panggilpoli(Unit4.getText());
+        }
+    }//GEN-LAST:event_BtnBatal8ActionPerformed
+
+    private void BtnSeek10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSeek10ActionPerformed
+        pilihan=5;
+        poli.emptTeks();
+        poli.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+        poli.setLocationRelativeTo(internalFrame1);
+        poli.setAlwaysOnTop(false);
+        poli.setVisible(true);
+    }//GEN-LAST:event_BtnSeek10ActionPerformed
+
+    private void BtnSeek11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSeek11ActionPerformed
+        pilihan=5;
+        dokter.emptTeks();
+        dokter.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+        dokter.setLocationRelativeTo(internalFrame1);
+        dokter.setAlwaysOnTop(false);
+        dokter.setVisible(true);
+    }//GEN-LAST:event_BtnSeek11ActionPerformed
+
+    private void BtnAntri5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAntri5ActionPerformed
+        ppAntri5ActionPerformed(evt);
+    }//GEN-LAST:event_BtnAntri5ActionPerformed
+
+    private void BtnBatal9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBatal9ActionPerformed
+        ppUndo5ActionPerformed(evt);
+    }//GEN-LAST:event_BtnBatal9ActionPerformed
+
+    private void BtnBatal10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBatal10ActionPerformed
+        if(!labelantri5.getText().equals("")){
+            try {
+                BackgroundMusic bm = new BackgroundMusic("./suara/nomor-urut.mp3");
+                bm.start();
+                Thread.sleep(2000);
+                bm.stop();
+            } catch (InterruptedException ex) {
+                System.out.println(ex);
+            } 
+            panggil(Integer.parseInt(labelantri5.getText()));
+            panggilpoli(Unit5.getText());
+        }
+    }//GEN-LAST:event_BtnBatal10ActionPerformed
+
+    private void BtnSeek12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSeek12ActionPerformed
+        pilihan=6;
+        poli.emptTeks();
+        poli.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+        poli.setLocationRelativeTo(internalFrame1);
+        poli.setAlwaysOnTop(false);
+        poli.setVisible(true);
+    }//GEN-LAST:event_BtnSeek12ActionPerformed
+
+    private void BtnSeek13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSeek13ActionPerformed
+        pilihan=6;
+        dokter.emptTeks();
+        dokter.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+        dokter.setLocationRelativeTo(internalFrame1);
+        dokter.setAlwaysOnTop(false);
+        dokter.setVisible(true);
+    }//GEN-LAST:event_BtnSeek13ActionPerformed
+
+    private void BtnAntri6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAntri6ActionPerformed
+        ppAntri6ActionPerformed(evt);
+    }//GEN-LAST:event_BtnAntri6ActionPerformed
+
+    private void BtnBatal11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBatal11ActionPerformed
+        ppUndo6ActionPerformed(evt);
+    }//GEN-LAST:event_BtnBatal11ActionPerformed
+
+    private void BtnBatal12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBatal12ActionPerformed
+        if(!labelantri6.getText().equals("")){
+            try {
+                BackgroundMusic bm = new BackgroundMusic("./suara/nomor-urut.mp3");
+                bm.start();
+                Thread.sleep(2000);
+                bm.stop();
+            } catch (InterruptedException ex) {
+                System.out.println(ex);
+            } 
+            panggil(Integer.parseInt(labelantri6.getText()));
+            panggilpoli(Unit6.getText());
+        }
+    }//GEN-LAST:event_BtnBatal12ActionPerformed
+
+    private void Unit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Unit2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Unit2ActionPerformed
+
+    private void ppAntri4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppAntri4ActionPerformed
+        if(tabMode4.getRowCount()!=0){
+           try {
+                BackgroundMusic bm = new BackgroundMusic("./suara/nomor-urut.mp3");
+                bm.start();
+                Thread.sleep(2000);
+                bm.stop();
+            } catch (InterruptedException ex) {
+                System.out.println(ex);
+            } 
+            panggil(Integer.parseInt(tabMode4.getValueAt(0,0).toString()));
+            panggilpoli(Unit4.getText());
+                labelantri4.setText(tabMode4.getValueAt(0,0).toString());
+                labelpas4.setText(tabMode4.getValueAt(0,2).toString());
+                norawat4.setText(tabMode4.getValueAt(0,3).toString());
+                labeldokter4.setText(tabMode4.getValueAt(0,4).toString());
+                Sequel.queryu("update reg_periksa set stts='Sudah' where no_rawat='"+tabMode4.getValueAt(0,3).toString()+"'");
+                tampil4();
+        }
+    }//GEN-LAST:event_ppAntri4ActionPerformed
+
+    private void ppUndo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppUndo4ActionPerformed
+        if(tabMode4.getRowCount()>=5){                
+                Sequel.queryu("update reg_periksa set stts='Belum',jam_reg='"+tabMode4.getValueAt(4,5).toString()+"' where no_rawat='"+norawat4.getText()+"'");
+                labelantri4.setText(tabMode4.getValueAt(0,0).toString());
+                labelpas4.setText(tabMode4.getValueAt(0,2).toString());
+                norawat4.setText(tabMode4.getValueAt(0,3).toString());
+                labeldokter4.setText(tabMode4.getValueAt(0,4).toString());
+                Sequel.queryu("update reg_periksa set stts='Sudah' where no_rawat='"+tabMode4.getValueAt(0,3).toString()+"'");
+                tampil4();
+        }else if(tabMode4.getRowCount()<=5){  
+                Sequel.queryu("update reg_periksa set stts='Belum',jam_reg=current_time() where no_rawat='"+norawat4.getText()+"'");
+                labelantri4.setText(tabMode4.getValueAt(0,0).toString());
+                labelpas4.setText(tabMode4.getValueAt(0,2).toString());                
+                norawat4.setText(tabMode4.getValueAt(0,3).toString());
+                labeldokter4.setText(tabMode4.getValueAt(0,4).toString());
+                Sequel.queryu("update reg_periksa set stts='Sudah' where no_rawat='"+tabMode4.getValueAt(0,3).toString()+"'");
+                tampil4();
+        }
+    }//GEN-LAST:event_ppUndo4ActionPerformed
+
+    private void ppAntri5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppAntri5ActionPerformed
+        if(tabMode5.getRowCount()!=0){
+           try {
+                BackgroundMusic bm = new BackgroundMusic("./suara/nomor-urut.mp3");
+                bm.start();
+                Thread.sleep(2000);
+                bm.stop();
+            } catch (InterruptedException ex) {
+                System.out.println(ex);
+            } 
+            panggil(Integer.parseInt(tabMode5.getValueAt(0,0).toString()));
+            panggilpoli(Unit5.getText());
+                labelantri5.setText(tabMode5.getValueAt(0,0).toString());
+                labelpas5.setText(tabMode5.getValueAt(0,2).toString());
+                norawat5.setText(tabMode5.getValueAt(0,3).toString());
+                labeldokter5.setText(tabMode5.getValueAt(0,4).toString());
+                Sequel.queryu("update reg_periksa set stts='Sudah' where no_rawat='"+tabMode5.getValueAt(0,3).toString()+"'");
+                tampil5();
+        }
+    }//GEN-LAST:event_ppAntri5ActionPerformed
+
+    private void ppUndo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppUndo5ActionPerformed
+        if(tabMode5.getRowCount()>=5){                
+                Sequel.queryu("update reg_periksa set stts='Belum',jam_reg='"+tabMode5.getValueAt(4,5).toString()+"' where no_rawat='"+norawat5.getText()+"'");
+                labelantri5.setText(tabMode5.getValueAt(0,0).toString());
+                labelpas5.setText(tabMode5.getValueAt(0,2).toString());
+                norawat5.setText(tabMode5.getValueAt(0,3).toString());
+                labeldokter5.setText(tabMode5.getValueAt(0,4).toString());
+                Sequel.queryu("update reg_periksa set stts='Sudah' where no_rawat='"+tabMode5.getValueAt(0,3).toString()+"'");
+                tampil5();
+        }else if(tabMode5.getRowCount()<=5){  
+                Sequel.queryu("update reg_periksa set stts='Belum',jam_reg=current_time() where no_rawat='"+norawat5.getText()+"'");
+                labelantri5.setText(tabMode5.getValueAt(0,0).toString());
+                labelpas5.setText(tabMode5.getValueAt(0,2).toString());                
+                norawat5.setText(tabMode5.getValueAt(0,3).toString());
+                labeldokter5.setText(tabMode5.getValueAt(0,4).toString());
+                Sequel.queryu("update reg_periksa set stts='Sudah' where no_rawat='"+tabMode5.getValueAt(0,3).toString()+"'");
+                tampil5();
+        }
+    }//GEN-LAST:event_ppUndo5ActionPerformed
+
+    private void ppAntri6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppAntri6ActionPerformed
+        if(tabMode6.getRowCount()!=0){
+           try {
+                BackgroundMusic bm = new BackgroundMusic("./suara/nomor-urut.mp3");
+                bm.start();
+                Thread.sleep(2000);
+                bm.stop();
+            } catch (InterruptedException ex) {
+                System.out.println(ex);
+            } 
+            panggil(Integer.parseInt(tabMode6.getValueAt(0,0).toString()));
+            panggilpoli(Unit6.getText());
+                labelantri6.setText(tabMode6.getValueAt(0,0).toString());
+                labelpas6.setText(tabMode6.getValueAt(0,2).toString());
+                norawat6.setText(tabMode6.getValueAt(0,3).toString());
+                labeldokter6.setText(tabMode6.getValueAt(0,4).toString());
+                Sequel.queryu("update reg_periksa set stts='Sudah' where no_rawat='"+tabMode6.getValueAt(0,3).toString()+"'");
+                tampil6();
+        }
+    }//GEN-LAST:event_ppAntri6ActionPerformed
+
+    private void ppUndo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppUndo6ActionPerformed
+        if(tabMode6.getRowCount()>=5){                
+                Sequel.queryu("update reg_periksa set stts='Belum',jam_reg='"+tabMode6.getValueAt(4,5).toString()+"' where no_rawat='"+norawat6.getText()+"'");
+                labelantri6.setText(tabMode6.getValueAt(0,0).toString());
+                labelpas6.setText(tabMode6.getValueAt(0,2).toString());
+                norawat6.setText(tabMode6.getValueAt(0,3).toString());
+                labeldokter6.setText(tabMode6.getValueAt(0,4).toString());
+                Sequel.queryu("update reg_periksa set stts='Sudah' where no_rawat='"+tabMode6.getValueAt(0,3).toString()+"'");
+                tampil6();
+        }else if(tabMode6.getRowCount()<=5){  
+                Sequel.queryu("update reg_periksa set stts='Belum',jam_reg=current_time() where no_rawat='"+norawat6.getText()+"'");
+                labelantri6.setText(tabMode6.getValueAt(0,0).toString());
+                labelpas6.setText(tabMode6.getValueAt(0,2).toString());                
+                norawat6.setText(tabMode6.getValueAt(0,3).toString());
+                labeldokter6.setText(tabMode6.getValueAt(0,4).toString());
+                Sequel.queryu("update reg_periksa set stts='Sudah' where no_rawat='"+tabMode6.getValueAt(0,3).toString()+"'");
+                tampil6();
+        }
+    }//GEN-LAST:event_ppUndo6ActionPerformed
 
 
 
@@ -1333,43 +2353,80 @@ private void BtnBatal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private widget.Button BtnAntri1;
     private widget.Button BtnAntri2;
     private widget.Button BtnAntri3;
+    private widget.Button BtnAntri4;
+    private widget.Button BtnAntri5;
+    private widget.Button BtnAntri6;
     private widget.Button BtnBatal1;
+    private widget.Button BtnBatal10;
+    private widget.Button BtnBatal11;
+    private widget.Button BtnBatal12;
     private widget.Button BtnBatal2;
     private widget.Button BtnBatal3;
     private widget.Button BtnBatal4;
     private widget.Button BtnBatal5;
     private widget.Button BtnBatal6;
+    private widget.Button BtnBatal7;
+    private widget.Button BtnBatal8;
+    private widget.Button BtnBatal9;
     private widget.Button BtnDisplay;
     private widget.Button BtnKeluar;
+    private widget.Button BtnSeek10;
+    private widget.Button BtnSeek11;
+    private widget.Button BtnSeek12;
+    private widget.Button BtnSeek13;
     private widget.Button BtnSeek2;
     private widget.Button BtnSeek3;
     private widget.Button BtnSeek4;
     private widget.Button BtnSeek5;
     private widget.Button BtnSeek6;
     private widget.Button BtnSeek7;
+    private widget.Button BtnSeek8;
+    private widget.Button BtnSeek9;
     private javax.swing.JDialog DlgDisplay;
     private widget.TextBox Dokter1;
     private widget.TextBox Dokter2;
     private widget.TextBox Dokter3;
+    private widget.TextBox Dokter4;
+    private widget.TextBox Dokter5;
+    private widget.TextBox Dokter6;
     private javax.swing.JPopupMenu Popup1;
     private javax.swing.JPopupMenu Popup2;
     private javax.swing.JPopupMenu Popup3;
     private javax.swing.JPopupMenu Popup4;
+    private javax.swing.JPopupMenu Popup5;
+    private javax.swing.JPopupMenu Popup6;
+    private javax.swing.JPopupMenu Popup7;
     private widget.ScrollPane Scroll;
     private widget.ScrollPane Scroll1;
     private widget.ScrollPane Scroll2;
+    private widget.ScrollPane Scroll3;
+    private widget.ScrollPane Scroll4;
+    private widget.ScrollPane Scroll5;
     private widget.Table Table1;
     private widget.Table Table2;
     private widget.Table Table3;
+    private widget.Table Table4;
+    private widget.Table Table5;
+    private widget.Table Table6;
     private widget.TextBox Unit1;
     private widget.TextBox Unit2;
     private widget.TextBox Unit3;
+    private widget.TextBox Unit4;
+    private widget.TextBox Unit5;
+    private widget.TextBox Unit6;
     private widget.InternalFrame form1;
     private widget.InternalFrame form2;
     private widget.InternalFrame form3;
+    private widget.InternalFrame form4;
+    private widget.InternalFrame form5;
+    private widget.InternalFrame form6;
     private widget.InternalFrame internalFrame1;
-    private widget.InternalFrame internalFrame5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1377,35 +2434,57 @@ private void BtnBatal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private widget.Label labelantri1;
     private widget.Label labelantri2;
     private widget.Label labelantri3;
+    private widget.Label labelantri4;
+    private widget.Label labelantri5;
+    private widget.Label labelantri6;
     private widget.Label labeldokter1;
     private widget.Label labeldokter2;
     private widget.Label labeldokter3;
+    private widget.Label labeldokter4;
+    private widget.Label labeldokter5;
+    private widget.Label labeldokter6;
     private widget.Label labelpas1;
     private widget.Label labelpas2;
     private widget.Label labelpas3;
-    private widget.Label labelruntext;
+    private widget.Label labelpas4;
+    private widget.Label labelpas5;
+    private widget.Label labelpas6;
     private widget.TextBox norawat1;
     private widget.TextBox norawat2;
     private widget.TextBox norawat3;
-    private usu.widget.glass.PanelGlass paneliklan;
+    private widget.TextBox norawat4;
+    private widget.TextBox norawat5;
+    private widget.TextBox norawat6;
     private widget.panelisi panelisi1;
+    private widget.panelisi panelisi10;
+    private widget.panelisi panelisi11;
+    private widget.panelisi panelisi12;
+    private widget.panelisi panelisi13;
     private widget.panelisi panelisi2;
     private widget.panelisi panelisi3;
     private widget.panelisi panelisi4;
     private widget.panelisi panelisi5;
     private widget.panelisi panelisi6;
     private widget.panelisi panelisi7;
-    private javax.swing.JPanel panelruntext;
+    private widget.panelisi panelisi8;
+    private widget.panelisi panelisi9;
     private javax.swing.JMenuItem ppAntri1;
     private javax.swing.JMenuItem ppAntri2;
     private javax.swing.JMenuItem ppAntri3;
+    private javax.swing.JMenuItem ppAntri4;
+    private javax.swing.JMenuItem ppAntri5;
+    private javax.swing.JMenuItem ppAntri6;
     private javax.swing.JMenuItem ppClose;
     private javax.swing.JMenuItem ppUndo1;
     private javax.swing.JMenuItem ppUndo2;
     private javax.swing.JMenuItem ppUndo3;
+    private javax.swing.JMenuItem ppUndo4;
+    private javax.swing.JMenuItem ppUndo5;
+    private javax.swing.JMenuItem ppUndo6;
     // End of variables declaration//GEN-END:variables
     
     private void tampil1(){
@@ -1421,7 +2500,7 @@ private void BtnBatal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                    "and poliklinik.nm_poli='"+Unit1.getText()+"' "+
                    "and dokter.nm_dokter='"+Dokter1.getText()+"' "+
                    "and stts='Belum' "+
-                   "order by reg_periksa.jam_reg asc limit 10");
+                   "order by reg_periksa.no_reg asc limit 10");
             while(rs.next()){
                 String[] data={rs.getString(1),
                                rs.getString(2),
@@ -1449,7 +2528,7 @@ private void BtnBatal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                    "and poliklinik.nm_poli='"+Unit2.getText()+"' "+
                    "and dokter.nm_dokter='"+Dokter2.getText()+"' "+
                    "and stts='Belum' "+
-                   "order by reg_periksa.jam_reg asc limit 10");
+                   "order by reg_periksa.no_reg asc limit 10");
             while(rs.next()){
                 String[] data={rs.getString(1),
                                rs.getString(2),
@@ -1477,7 +2556,7 @@ private void BtnBatal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                    "and poliklinik.nm_poli='"+Unit3.getText()+"' "+
                    "and dokter.nm_dokter='"+Dokter3.getText()+"' "+
                    "and stts='Belum' "+
-                   "order by reg_periksa.jam_reg asc limit 10");
+                   "order by reg_periksa.no_reg asc limit 10");
             while(rs.next()){
                 String[] data={rs.getString(1),
                                rs.getString(2),
@@ -1492,28 +2571,112 @@ private void BtnBatal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
         }
     }
     
+    private void tampil4(){
+        Valid.tabelKosong(tabMode4);
+        try{     
+            ResultSet rs=koneksi.createStatement().executeQuery("select reg_periksa.no_reg,reg_periksa.no_rkm_medis, "+
+                   "pasien.nm_pasien,reg_periksa.no_rawat,dokter.nm_dokter,reg_periksa.jam_reg "+
+                   "from reg_periksa inner join dokter inner join pasien inner join poliklinik "+
+                   "on reg_periksa.kd_dokter=dokter.kd_dokter "+
+                   "and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                   "and reg_periksa.kd_poli=poliklinik.kd_poli "+
+                   "where reg_periksa.tgl_registrasi=current_date() "+
+                   "and poliklinik.nm_poli='"+Unit4.getText()+"' "+
+                   "and dokter.nm_dokter='"+Dokter4.getText()+"' "+
+                   "and stts='Belum' "+
+                   "order by reg_periksa.no_reg asc limit 10");
+            while(rs.next()){
+                String[] data={rs.getString(1),
+                               rs.getString(2),
+                               rs.getString(3),
+                               rs.getString(4),
+                               rs.getString(5),
+                               rs.getString(6)};
+                tabMode4.addRow(data);
+            }
+        }catch(SQLException e){
+            System.out.println("Error : "+e);
+        }
+    }
+    
+    private void tampil5(){
+        Valid.tabelKosong(tabMode5);
+        try{     
+            ResultSet rs=koneksi.createStatement().executeQuery("select reg_periksa.no_reg,reg_periksa.no_rkm_medis, "+
+                   "pasien.nm_pasien,reg_periksa.no_rawat,dokter.nm_dokter,reg_periksa.jam_reg "+
+                   "from reg_periksa inner join dokter inner join pasien inner join poliklinik "+
+                   "on reg_periksa.kd_dokter=dokter.kd_dokter "+
+                   "and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                   "and reg_periksa.kd_poli=poliklinik.kd_poli "+
+                   "where reg_periksa.tgl_registrasi=current_date() "+
+                   "and poliklinik.nm_poli='"+Unit5.getText()+"' "+
+                   "and dokter.nm_dokter='"+Dokter5.getText()+"' "+
+                   "and stts='Belum' "+
+                   "order by reg_periksa.no_reg asc limit 10");
+            while(rs.next()){
+                String[] data={rs.getString(1),
+                               rs.getString(2),
+                               rs.getString(3),
+                               rs.getString(4),
+                               rs.getString(5),
+                               rs.getString(6)};
+                tabMode5.addRow(data);
+            }
+        }catch(SQLException e){
+            System.out.println("Error : "+e);
+        }
+    }
+        
+    private void tampil6(){
+        Valid.tabelKosong(tabMode6);
+        try{     
+            ResultSet rs=koneksi.createStatement().executeQuery("select reg_periksa.no_reg,reg_periksa.no_rkm_medis, "+
+                   "pasien.nm_pasien,reg_periksa.no_rawat,dokter.nm_dokter,reg_periksa.jam_reg "+
+                   "from reg_periksa inner join dokter inner join pasien inner join poliklinik "+
+                   "on reg_periksa.kd_dokter=dokter.kd_dokter "+
+                   "and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                   "and reg_periksa.kd_poli=poliklinik.kd_poli "+
+                   "where reg_periksa.tgl_registrasi=current_date() "+
+                   "and poliklinik.nm_poli='"+Unit6.getText()+"' "+
+                   "and dokter.nm_dokter='"+Dokter6.getText()+"' "+
+                   "and stts='Belum' "+
+                   "order by reg_periksa.no_reg asc limit 10");
+            while(rs.next()){
+                String[] data={rs.getString(1),
+                               rs.getString(2),
+                               rs.getString(3),
+                               rs.getString(4),
+                               rs.getString(5),
+                               rs.getString(6)};
+                tabMode6.addRow(data);
+            }
+        }catch(SQLException e){
+            System.out.println("Error : "+e);
+        }
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        paneliklan.repaint();
-        String oldText = labelruntext.getText();
-        String newText = oldText.substring(1) + oldText.substring(0, 1);
-        labelruntext.setText( newText );
+//        paneliklan.repaint();
+//        String oldText = labelruntext.getText();
+//        String newText = oldText.substring(1) + oldText.substring(0, 1);
+//        labelruntext.setText( newText );
     }
     
     private  void isTampil(){
-        try{
-            ResultSet rs=koneksi.createStatement().executeQuery("select teks, aktifkan, gambar from runtext");
-            while(rs.next()){
-                labelruntext.setText(rs.getString(1));
-                if(rs.getString(2).equals("Yes")){
-                    Blob blob = rs.getBlob(3);
-                    paneliklan.setBackgroundImage(new javax.swing.ImageIcon(blob.getBytes(1, (int) (blob.length()))));
-                    
-                }
-            }
-        }catch(SQLException e){
-            System.out.println(e+"Error : Silahkan Set Aplikasi");
-        }
+//        try{
+//            ResultSet rs=koneksi.createStatement().executeQuery("select teks, aktifkan, gambar from runtext");
+//            while(rs.next()){
+//                labelruntext.setText(rs.getString(1));
+//                if(rs.getString(2).equals("Yes")){
+//                    Blob blob = rs.getBlob(3);
+//                    paneliklan.setBackgroundImage(new javax.swing.ImageIcon(blob.getBytes(1, (int) (blob.length()))));
+//                    
+//                }
+//            }
+//        }catch(SQLException e){
+//            System.out.println(e+"Error : Silahkan Set Aplikasi");
+//        }
     } 
     
     private void panggil(int antrian){
@@ -1592,6 +2755,74 @@ private void BtnBatal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
             }
             
             panggil(antrian%100);
+        }
+    }
+    
+    private void panggilpoli(String poli){
+        System.out.println(poli);
+        if(poli.equals("POLIKLINIK JANTUNG")){
+            try {
+                BackgroundMusic bm = new BackgroundMusic("./suara/POLI-JANTUNG.mp3");
+                bm.start();
+                Thread.sleep(1500);
+                bm.stop();
+            } catch (InterruptedException ex) {
+                System.out.println(ex);
+            }
+        }else if (poli.equals("POLIKLINIK ANAK")){
+            try {
+                BackgroundMusic bm = new BackgroundMusic("./suara/POLI-ANAK.mp3");
+                bm.start();
+                Thread.sleep(1500);
+                bm.stop();
+            } catch (InterruptedException ex) {
+                System.out.println(ex);
+            }
+        }else if (poli.equals("POLIKLINIK BEDAH")){
+            try {
+                BackgroundMusic bm = new BackgroundMusic("./suara/POLI-BEDAH.mp3");
+                bm.start();
+                Thread.sleep(1500);
+                bm.stop();
+            } catch (InterruptedException ex) {
+                System.out.println(ex);
+            }
+        }else if (poli.equals("POLIKLINIK DALAM")){
+            try {
+                BackgroundMusic bm = new BackgroundMusic("./suara/POLI-DALAM.mp3");
+                bm.start();
+                Thread.sleep(1500);
+                bm.stop();
+            } catch (InterruptedException ex) {
+                System.out.println(ex);
+            }
+        }else if (poli.equals("POLIKLINIK KANDUNGAN")){
+            try {
+                BackgroundMusic bm = new BackgroundMusic("./suara/POLI-KANDUNGAN.mp3");
+                bm.start();
+                Thread.sleep(1500);
+                bm.stop();
+            } catch (InterruptedException ex) {
+                System.out.println(ex);
+            }
+        }else if (poli.equals("POLIKLINIK PARU")){
+            try {
+                BackgroundMusic bm = new BackgroundMusic("./suara/POLI-PARU.mp3");
+                bm.start();
+                Thread.sleep(1500);
+                bm.stop();
+            } catch (InterruptedException ex) {
+                System.out.println(ex);
+            }
+        }else if (poli.equals("POLIKLINIK SARAF")){
+            try {
+                BackgroundMusic bm = new BackgroundMusic("./suara/POLI-SARAF.mp3");
+                bm.start();
+                Thread.sleep(1500);
+                bm.stop();
+            } catch (InterruptedException ex) {
+                System.out.println(ex);
+            }
         }
     }
 }
